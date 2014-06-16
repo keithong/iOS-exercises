@@ -16,7 +16,7 @@
     NSDate *_dateCreated;
     
     BNRItem *_containedItem;
-    BNRItem *_container;
+    __weak BNRItem *_container;
 }
 
 +(instancetype)randomItem;
