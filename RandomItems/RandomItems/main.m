@@ -84,6 +84,12 @@ int main(int argc, const char * argv[])
         // the description message to the corresponding argument
         NSLog(@"%@", item);
         
+        BNRItem *itemWithName = [[BNRItem alloc] initWithItemName:@"Blue Sofa"];
+        NSLog(@"%@", itemWithName);
+        
+        BNRItem *itemWithNoName = [[BNRItem alloc]init];
+        NSLog(@"%@", itemWithNoName);
+        
         // Destroy the mutable array object
         items = nil;
         
