@@ -22,9 +22,9 @@
     firstView.backgroundColor = [UIColor redColor];
     secondView.backgroundColor = [UIColor blueColor];
     
-    [self.window addSubview:secondView];
     [self.window addSubview:firstView];
-    
+    [firstView addSubview:secondView];
+
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
