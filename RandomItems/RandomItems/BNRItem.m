@@ -128,6 +128,9 @@
 -(void)setContainedItem:(BNRItem *)item
 {
     _containedItem = item;
+    // When given an item to contain, the contained
+    //item will be given a pointer to its container
+    item.container = self;
 }
 
 -(BNRItem *)containedItem
