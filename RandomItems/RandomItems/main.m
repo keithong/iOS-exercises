@@ -63,13 +63,17 @@ int main(int argc, const char * argv[])
               [item valueInDollars]); 
          */
         
+        /*
         NSLog(@"%@ %@ %@ %d",
               item.itemName,
               item.dateCreated,
               item.serialNumber,
               item.valueInDollars);
+         */
         
-        
+        // The %@ token is replaced with the result of sendint
+        // the description message to the corresponding argument
+        NSLog(@"%@", item);
         
         // Destroy the mutable array object
         items = nil;
