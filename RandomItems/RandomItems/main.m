@@ -26,8 +26,24 @@ int main(int argc, const char * argv[])
         // Send another message, insertObject:atIndext:, to that same array object
         [items insertObject:@"Zero" atIndex:0];
         
+        
+        /* Enumerate using for loop
+         for (int i = 0; i < [items count]; i++){
+            NSString *item = [items objectAtIndex:i];
+            NSLog(@"%@",item);
+        } 
+        */
+        
+        // Enumerate using fast enum
+        for (NSString *item in items){
+            // Log the description of item
+            NSLog(@"%@", item);
+        }
+        
         // Destroy the mutable array object
         items = nil;
+        
+        
         
     }
     return 0;
