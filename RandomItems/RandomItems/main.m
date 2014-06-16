@@ -20,12 +20,12 @@ int main(int argc, const char * argv[])
         // Send the message addObject: to the NSMutableArray pointed to
         // by the variable items, passing a string each time
         
-        [items addObject:@"One"];
-        [items addObject:@"Two"];
-        [items addObject:@"Three"];
+        // [items addObject:@"One"];
+        // [items addObject:@"Two"];
+        // [items addObject:@"Three"];
         
         // Send another message, insertObject:atIndext:, to that same array object
-        [items insertObject:@"Zero" atIndex:0];
+        //  [items insertObject:@"Zero" atIndex:0];
         
         
         /* Enumerate using for loop
@@ -36,16 +36,16 @@ int main(int argc, const char * argv[])
         */
         
         // Enumerate using fast enum
-        for (NSString *item in items){
+        // for (NSString *item in items){
             // Log the description of item
-            NSLog(@"%@", item);
-        }
+            // NSLog(@"%@", item);
+        //}
         
         // Code with initializers
-        BNRItem *item = [[BNRItem alloc]
-                         initWithItemName:@"Red Sofa"
-                         valueInDollars:100
-                         serialNumber:@"A1B2C3"];
+        // BNRItem *item = [[BNRItem alloc]
+        //        initWithItemName:@"Red Sofa"
+        //                 valueInDollars:100
+        //                 serialNumber:@"A1B2C3"];
         /*
         Code without initializers
      
@@ -82,13 +82,21 @@ int main(int argc, const char * argv[])
         
         // The %@ token is replaced with the result of sendint
         // the description message to the corresponding argument
-        NSLog(@"%@", item);
+        // NSLog(@"%@", item);
         
-        BNRItem *itemWithName = [[BNRItem alloc] initWithItemName:@"Blue Sofa"];
-        NSLog(@"%@", itemWithName);
+        // BNRItem *itemWithName = [[BNRItem alloc] initWithItemName:@"Blue Sofa"];
+        // NSLog(@"%@", itemWithName);
         
-        BNRItem *itemWithNoName = [[BNRItem alloc]init];
-        NSLog(@"%@", itemWithNoName);
+        // BNRItem *itemWithNoName = [[BNRItem alloc]init];
+        // NSLog(@"%@", itemWithNoName);
+        
+        for (int i = 0; i < 10; i++) {
+            BNRItem *item = [BNRItem randomItem];
+            [items addObject:item];
+        }
+        for (BNRItem *item in items) {
+            NSLog(@"%@", item);
+        }
         
         // Destroy the mutable array object
         items = nil;
