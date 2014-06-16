@@ -20,7 +20,8 @@
     if(self){
     
         // Give the instance variables initial values
-        _itemName = sNumber;
+        _itemName = name;
+        _serialNumber = sNumber;
         _valueInDollars = value;
         _dateCreated = [[NSDate alloc] init];
     }
