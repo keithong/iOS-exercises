@@ -19,12 +19,12 @@
 
 -(instancetype)initWithItemName:(NSString *)name;
 
-@property (atomic) BNRItem *containedItem;
-@property (atomic) BNRItem *cotainer;
+@property (atomic, strong) BNRItem *containedItem;
+@property (atomic, weak) BNRItem *container;
 
-@property (atomic) NSString *itemName;
-@property (atomic) NSString *serialNumber;
+@property (atomic, copy) NSString *itemName;
+@property (atomic, copy) NSString *serialNumber;
 @property (atomic) int valueInDollars;
-@property (atomic) NSDate *dateCreated;
+@property (atomic, readonly, strong) NSDate *dateCreated;
 
 @end
