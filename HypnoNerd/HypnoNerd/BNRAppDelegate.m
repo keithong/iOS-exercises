@@ -25,7 +25,10 @@
     // Look in appBundle for the file BNRReminderViewController.xib
     BNRReminderViewController *rvc = [[BNRReminderViewController alloc]initWithNibName:@"BNRReminderViewController" bundle:appBundle];
     
-    self.window.rootViewController = rvc;
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    tabBarController.viewControllers = @[hvc,rvc];
+    
+    self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     
