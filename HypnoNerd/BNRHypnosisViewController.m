@@ -23,6 +23,9 @@
     // Setting the border style on the text field will allow us to see it more easily
     
     textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"Hypnotize me";
+    textField.returnKeyType = UIReturnKeyDone;
+    
     [backgroundView addSubview:textField];
     
     // Set it as the view of this view controller
