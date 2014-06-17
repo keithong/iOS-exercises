@@ -14,7 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+//    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
+    CGRect firstFrame = self.window.bounds;
     
     BNRHypnosisterView *firstView = [[BNRHypnosisterView alloc] initWithFrame: firstFrame];
     
