@@ -23,6 +23,8 @@
 		F0EA58B7194FDF5500438DB6 /* BNRHypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA58B6194FDF5500438DB6 /* BNRHypnosisViewController.m */; };
 		F0EA58BA194FE31A00438DB6 /* BNRReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA58B9194FE31A00438DB6 /* BNRReminderViewController.m */; };
 		F0EA58BC194FE41C00438DB6 /* BNRReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EA58BB194FE41C00438DB6 /* BNRReminderViewController.xib */; };
+		F0EA58C3194FF87100438DB6 /* BNRQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA58C1194FF87100438DB6 /* BNRQuizViewController.m */; };
+		F0EA58C4194FF87100438DB6 /* BNRQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EA58C2194FF87100438DB6 /* BNRQuizViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		F0EA58B8194FE31A00438DB6 /* BNRReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRReminderViewController.h; sourceTree = "<group>"; };
 		F0EA58B9194FE31A00438DB6 /* BNRReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRReminderViewController.m; sourceTree = "<group>"; };
 		F0EA58BB194FE41C00438DB6 /* BNRReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRReminderViewController.xib; sourceTree = "<group>"; };
+		F0EA58C0194FF87100438DB6 /* BNRQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRQuizViewController.h; sourceTree = "<group>"; };
+		F0EA58C1194FF87100438DB6 /* BNRQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRQuizViewController.m; sourceTree = "<group>"; };
+		F0EA58C2194FF87100438DB6 /* BNRQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRQuizViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +123,15 @@
 		F0EA5889194FDEE300438DB6 /* HypnoNerd */ = {
 			isa = PBXGroup;
 			children = (
-				F0EA58B5194FDF5500438DB6 /* BNRHypnosisViewController.h */,
-				F0EA58B6194FDF5500438DB6 /* BNRHypnosisViewController.m */,
-				F0EA58B2194FDF1D00438DB6 /* BNRHypnosisterView.h */,
-				F0EA58B3194FDF1D00438DB6 /* BNRHypnosisterView.m */,
 				F0EA5892194FDEE300438DB6 /* BNRAppDelegate.h */,
 				F0EA5893194FDEE300438DB6 /* BNRAppDelegate.m */,
+				F0EA58B2194FDF1D00438DB6 /* BNRHypnosisterView.h */,
+				F0EA58B3194FDF1D00438DB6 /* BNRHypnosisterView.m */,
+				F0EA58B5194FDF5500438DB6 /* BNRHypnosisViewController.h */,
+				F0EA58B6194FDF5500438DB6 /* BNRHypnosisViewController.m */,
+				F0EA58C0194FF87100438DB6 /* BNRQuizViewController.h */,
+				F0EA58C1194FF87100438DB6 /* BNRQuizViewController.m */,
+				F0EA58C2194FF87100438DB6 /* BNRQuizViewController.xib */,
 				F0EA58B8194FE31A00438DB6 /* BNRReminderViewController.h */,
 				F0EA58B9194FE31A00438DB6 /* BNRReminderViewController.m */,
 				F0EA58BB194FE41C00438DB6 /* BNRReminderViewController.xib */,
@@ -238,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EA58C4194FF87100438DB6 /* BNRQuizViewController.xib in Resources */,
 				F0EA58BC194FE41C00438DB6 /* BNRReminderViewController.xib in Resources */,
 				F0EA588E194FDEE300438DB6 /* InfoPlist.strings in Resources */,
 				F0EA5896194FDEE300438DB6 /* Images.xcassets in Resources */,
@@ -261,6 +270,7 @@
 			files = (
 				F0EA58B7194FDF5500438DB6 /* BNRHypnosisViewController.m in Sources */,
 				F0EA5890194FDEE300438DB6 /* main.m in Sources */,
+				F0EA58C3194FF87100438DB6 /* BNRQuizViewController.m in Sources */,
 				F0EA58B4194FDF1D00438DB6 /* BNRHypnosisterView.m in Sources */,
 				F0EA58BA194FE31A00438DB6 /* BNRReminderViewController.m in Sources */,
 				F0EA5894194FDEE300438DB6 /* BNRAppDelegate.m in Sources */,
