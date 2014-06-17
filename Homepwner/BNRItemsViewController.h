@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Keith Samson. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface BNRItemsViewController : NSObject
+@interface BNRItemsViewController : UITableViewController
 
 @end
