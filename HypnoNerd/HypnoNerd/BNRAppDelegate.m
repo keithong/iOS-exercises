@@ -8,6 +8,7 @@
 
 #import "BNRAppDelegate.h"
 #import "BNRHypnosisViewController.h"
+#import "BNRReminderViewController.h"
 
 @implementation BNRAppDelegate
 
@@ -17,7 +18,14 @@
     // Override point for customization after application launch.
     
     BNRHypnosisViewController *hvc = [[BNRHypnosisViewController alloc]init];
-    self.window.rootViewController = hvc;
+    
+    // This will get a pointer to an object that represents the app bundle
+    NSBundle *appBundle = [NSBundle mainBundle];
+    
+    // Look in appBundle for the file BNRReminderViewController.xib
+    BNRReminderViewController *rvc = [[BNRReminderViewController alloc]initWithNibName:@"BNRReminderViewController" bundle:appBundle];
+    
+    self.window.rootViewController = rvc;
     
     self.window.backgroundColor = [UIColor whiteColor];
     
