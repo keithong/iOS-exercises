@@ -24,9 +24,6 @@
     self = [super initWithStyle:UITableViewStylePlain];
     
     if(self){
-        for (int i = 0; i < 5; i++) {
-            [[BNRItemStore sharedStore] createItem];
-        }
     }
     
     return self;
