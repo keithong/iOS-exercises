@@ -10,6 +10,12 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
+@interface BNRItemsViewController()
+
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+
+@end
+
 @implementation BNRItemsViewController
 
 -(instancetype)init
@@ -61,5 +67,45 @@
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+    
+    UIView *header = self.headerView;
+    [self.tableView setTableHeaderView:header];
+    
+}
+
+-(IBAction)addNewitem:(id)sender
+{
+}
+
+-(IBAction)toggleEditingMode:(id)sender
+{
+    // If you are currently in editing mode:
+    if(self.isEditing){
+        // Change text of button to inform user of state
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        
+        // Turn off editing mode
+        [self setEditing:NO animated:YES];
+    } else {
+    
+        // Change text of button to inform user of state
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        
+        // Enter editing mode
+        [self setEditing:YES animated:YES];
+        
+    }
+    
+    
+}
+
+-(UIView *)headerView
+{
+    // If yoiu have not loaded the headerView yet..
+    if(!_headerView){
+        // Load the HeaderView.xib
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    }
+    return _headerView;
 }
 @end
