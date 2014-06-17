@@ -8,6 +8,12 @@
 
 #import "BNRHypnosisterView.h"
 
+@interface BNRHypnosisterView()
+
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation BNRHypnosisterView
 
 - (id)initWithFrame:(CGRect)frame
@@ -16,6 +22,7 @@
     if (self) {
         // All BNRHypnosisViews with a clear background color
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     return self;
 }
@@ -40,6 +47,7 @@
     
     for(float currentRadius = maxRadius ; currentRadius > 0; currentRadius -= 20){
         [path moveToPoint:CGPointMake(center.x + currentRadius, center.y)];
+        
         [path addArcWithCenter:center
                         radius:currentRadius
                     startAngle:0.0
@@ -52,7 +60,7 @@
     path.lineWidth = 10.0;
     
     // Configure the drawing color to light
-    [[UIColor lightGrayColor]setStroke];
+    [self.circleColor setStroke];
     
     // Draw the line
     [path stroke];
