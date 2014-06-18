@@ -14,7 +14,8 @@
 
 @interface BNRItemsViewController()
 
-@property (nonatomic, strong) IBOutlet UIView *headerView;
+// Remove the declaration of headerView because we have a Nav Bar now
+// @property (nonatomic, strong) IBOutlet UIView *headerView;
 
 @end
 
@@ -35,6 +36,8 @@
         
         // Set this bar button item as the right item in the navigaitonItem
         navItem.rightBarButtonItem = bbi;
+        
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     
     return self;
@@ -76,8 +79,12 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
     
-    UIView *header = self.headerView;
+    /*
+        -- WE WANT TO REPLACE THE HEADER VIEW WITH THE NAVBAR --
+     UIView *header = self.headerView;
     [self.tableView setTableHeaderView:header];
+
+     */
     
 }
 
@@ -97,6 +104,11 @@
     
 }
 
+/*
+ 
+ ----THIS CODE BLOCK HAS BEEN REPLACED BY THE NAVBAR FUNCTIONALITIES----
+ 
+ 
 -(IBAction)toggleEditingMode:(id)sender
 {
     // If you are currently in editing mode:
@@ -107,16 +119,12 @@
         // Turn off editing mode
         [self setEditing:NO animated:YES];
     } else {
-    
         // Change text of button to inform user of state
         [sender setTitle:@"Done" forState:UIControlStateNormal];
         
         // Enter editing mode
         [self setEditing:YES animated:YES];
-        
     }
-    
-    
 }
 
 -(UIView *)headerView
@@ -128,6 +136,9 @@
     }
     return _headerView;
 }
+ 
+------END-----
+*/
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
