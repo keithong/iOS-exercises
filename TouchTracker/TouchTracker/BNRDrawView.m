@@ -239,11 +239,10 @@
         if (self.selectedLine) {
             [self.linesInProgress removeAllObjects];
         }
-        else if (gr.state == UIGestureRecognizerStateEnded){
+    } else if (gr.state == UIGestureRecognizerStateEnded) {
             self.selectedLine = nil;
-        }
-        [self setNeedsDisplay];
     }
+        [self setNeedsDisplay];
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)other
