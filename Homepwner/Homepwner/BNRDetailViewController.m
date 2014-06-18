@@ -11,7 +11,8 @@
 #import "BNRImageStore.h"
 
 @interface BNRDetailViewController ()
-<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -22,6 +23,9 @@
 @end
 
 @implementation BNRDetailViewController
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
+}
 - (IBAction)takePicture:(id)sender {
 
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
@@ -102,5 +106,11 @@
 {
     _item = item;
     self.navigationItem.title = _item.itemName;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 @end
