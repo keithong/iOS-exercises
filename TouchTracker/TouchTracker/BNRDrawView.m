@@ -27,6 +27,11 @@
         self.finishedLines = [[NSMutableArray alloc] init];
         self.backgroundColor = [UIColor grayColor];
         self.multipleTouchEnabled = YES;
+        
+        UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        
+        doubleTapRecognizer.numberOfTapsRequired = 2;
+        [self addGestureRecognizer:doubleTapRecognizer];
     }
     return self;
 }
@@ -107,6 +112,28 @@
         [self.linesInProgress removeObjectForKey:key];
     }
     
+    [self setNeedsDisplay];
+}
+
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // Let's put in a log statement to see the order of events
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    
+    for(UITouch *t in touches)
+    {
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        [self.linesInProgress removeObjectForKey:key];
+    }
+    
+    [self setNeedsDisplay];
+
+}
+-(void)doubleTap:(UIGestureRecognizer *)gr
+{
+    NSLog(@"Recognized double tap! Deleting all lines!");
+    [self.linesInProgress removeAllObjects];
+    [self.finishedLines removeAllObjects];
     [self setNeedsDisplay];
 }
 
