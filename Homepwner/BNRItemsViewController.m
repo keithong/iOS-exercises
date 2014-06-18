@@ -27,7 +27,14 @@
     
     if(self){
         UINavigationItem *navItem = self.navigationItem;
-        navItem.title = @"Homepwner";        
+        navItem.title = @"Homepwner";
+        
+        // Create a new bar button item that will send
+        // addNewItem: to BNRItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(addNewitem:)];
+        
+        // Set this bar button item as the right item in the navigaitonItem
+        navItem.rightBarButtonItem = bbi;
     }
     
     return self;
