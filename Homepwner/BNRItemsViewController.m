@@ -7,6 +7,8 @@
 //
 
 #import "BNRItemsViewController.h"
+
+#import "BNRDetailViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
@@ -110,7 +112,7 @@
 
 -(UIView *)headerView
 {
-    // If yoiu have not loaded the headerView yet..
+    // If you have not loaded the headerView yet..
     if(!_headerView){
         // Load the HeaderView.xib
         [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
@@ -138,6 +140,14 @@
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [[BNRItemStore sharedStore] moveItemAtindex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc]init];
+    
+    // Push it into the top of the navigation controller's stack
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end
