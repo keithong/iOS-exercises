@@ -26,6 +26,8 @@
     self = [super initWithStyle:UITableViewStylePlain];
     
     if(self){
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";        
     }
     
     return self;
@@ -154,6 +156,11 @@
     
     // Push it into the top of the navigation controller's stack
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 @end

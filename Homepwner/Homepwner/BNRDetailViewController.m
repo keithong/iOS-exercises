@@ -48,7 +48,14 @@
     [self.view endEditing:YES];
     
     // "Save" changes to item
-    BNRItem *item = self.item
+    BNRItem *item = self.item;
+    item.itemName = self.nameField.text;
+    item.serialNumber = self.serialNumberField.text;
+    item.valueInDollars = [self.valueField.text intValue];
 }
-
+-(void)setItem:(BNRItem *)item
+{
+    _item = item;
+    self.navigationItem.title = _item.itemName;
+}
 @end
