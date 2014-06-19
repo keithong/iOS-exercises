@@ -9,6 +9,7 @@
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
+#import "BNRItemStore.h"
 
 @interface BNRDetailViewController ()
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
@@ -24,10 +25,43 @@
 @end
 
 @implementation BNRDetailViewController
+
+-(instancetype)initForNewItem:(BOOL)isNew
+{
+    self = [super initWithNibName:nil bundle:nil];
+    
+    if(self){
+        if(isNew){
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save:)];
+            
+            self.navigationItem.rightBarButtonItem = doneItem;
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+            
+            self.navigationItem.leftBarButtonItem = cancelItem;
+            
+        }
+    }
+    return self;
+}
+
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    [NSException raise:@"Wrong initializer" format:@"User initForNewItem"];
+    return nil;    
+}
+
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
 }
 - (IBAction)takePicture:(id)sender {
+    if([self.imagePickerPopover isPopoverVisible]){
+    
+        // If the popover is already up, get rid of it
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+        return;
+    }
 
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     
@@ -74,9 +108,18 @@
     // Put that image onto the screen in our image view
     self.imageView.image = image;
     
-    // Take image picker off the screen
-    // you must call this dismiss method
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    // Do I have a popover?
+    if(self.imagePickerPopover){
+        // Dismiss it
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+    } else {
+        // Take image picker off the screen
+        // you must call this dismiss method
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+    
+    
 }
 
 
@@ -207,4 +250,23 @@
     [self prepareViewsForOrientation:toInterfaceOrientation];
 }
 
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"User dismissed popover");
+    self.imagePickerPopover = nil;
+}
+
+-(void)save:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)cancel:(id)sender
+{
+    // If the user cancelled, then remove the BNRItem from the store
+    [[BNRItemStore sharedStore]removeItem:self.item];
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                      completion:NULL];
+}
 @end
