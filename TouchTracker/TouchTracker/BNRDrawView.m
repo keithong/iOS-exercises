@@ -40,6 +40,7 @@
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
         tapRecognizer.delaysTouchesBegan = YES;
         [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
+
         [self addGestureRecognizer:tapRecognizer];
         
         UILongPressGestureRecognizer *pressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
@@ -80,13 +81,13 @@
         [[UIColor greenColor]set];
         [self strokeLine:self.selectedLine];
     }
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
    
     // Let's put in a log statement to see the order of events
+    
     NSLog(@"%@", NSStringFromSelector(_cmd));
     
     for(UITouch *t in touches){
@@ -164,7 +165,6 @@
 -(void)tap:(UIGestureRecognizer *)gr
 {
     NSLog(@"Recognized tap!");
-    
     CGPoint point = [gr locationInView:self];
     self.selectedLine = [self lineAtPoint:point];
     
@@ -283,5 +283,4 @@
     }
     
 }
-
 @end
