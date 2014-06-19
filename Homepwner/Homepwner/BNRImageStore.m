@@ -49,14 +49,55 @@
     return self;
 }
 
+-(NSString *)imagePathForKey:(NSString *)key
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return [documentDirectory stringByAppendingPathComponent:key];
+}
+
+
 -(void)setImage:(UIImage *)image forKey:(NSString *)key
 {
     [self.dictionary setObject:image forKey:key];
+    
+    // Create full path for image
+    NSString *imagePath = [self imagePathForKey:key];
+    
+    // Turn image into JPEG data
+    NSData *data = UIImageJPEGRepresentation(image, 0.5);
+    
+    // Write it to full path
+    [data writeToFile:imagePath atomically:YES];
+    
 }
 
 -(UIImage *)imageforKey:(NSString *)key
 {
+    /* 
+     -- we want our image to come from the filesystem
     return [self.dictionary objectForKey:key];
+    */
+    
+    UIImage *result = self.dictionary[key];
+    
+    if(!result){
+        NSString *imagePath = [self imagePathForKey:key];
+        
+        // Create UIImage object from file
+        result = [UIImage imageWithContentsOfFile:imagePath];
+        
+        // If we found an image on the file system, place it into the cache
+        
+        if(result){
+            self.dictionary[key] = result;
+        } else {
+            NSLog(@"Error: unable to find %@", imagePath);
+        }
+    }
+    return result;
+    
 }
 
 -(void)deleteImageForKey:(NSString *)key
@@ -65,6 +106,9 @@
         return;
     }
     [self.dictionary removeObjectForKey:key];
+    
+    NSString *imagePath = [self imagePathForKey:key];
+    [[NSFileManager defaultManager] removeItemAtPath:imagePath error:nil];
 }
 
 @end
