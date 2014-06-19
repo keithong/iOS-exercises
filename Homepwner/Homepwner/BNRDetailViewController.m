@@ -11,8 +11,9 @@
 #import "BNRImageStore.h"
 
 @interface BNRDetailViewController ()
-<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
-
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (strong, nonatomic) UIPopoverController *imagePickerPopover;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -41,7 +42,25 @@
     imagePicker.delegate = self;
     
     // Place image picker on the screen
-    [self presentViewController:imagePicker animated:YES completion:NULL];
+    // Check for iPad device before instantiating the popover controller
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    {
+        // Create a new popover controller that will display the imagePickr
+        self.imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        
+        self.imagePickerPopover.delegate = self;
+        
+        // Display the popover controller; sender
+        // is the camera bar button item
+        [self.imagePickerPopover
+         presentPopoverFromBarButtonItem:sender
+         permittedArrowDirections:UIPopoverArrowDirectionAny
+         animated:YES];
+    } else {
+    
+        [self presentViewController:imagePicker animated:YES completion:NULL];
+        
+    }
     
 }
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -64,6 +83,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
+    [self prepareViewsForOrientation:io];
     
     BNRItem *item = self.item;
     
@@ -160,6 +182,29 @@
     
     [self.view addConstraints:horizontalConstraints];
     [self.view addConstraints:verticalConstraints];
+}
+
+-(void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    // Is it an iPad? No preparation necessary
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        return;
+    }
+    
+    // Is it landscape?
+    if (UIInterfaceOrientationIsLandscape(orientation)){
+        self.imageView.hidden = YES;
+        self.cameraButton.enabled = NO;
+    } else {
+        self.imageView.hidden = NO;
+        self.cameraButton.enabled = YES;
+    }
+
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self prepareViewsForOrientation:toInterfaceOrientation];
 }
 
 @end
