@@ -81,6 +81,26 @@
     
     // Insert item in array at new location
     [self.privateItems insertObject:item atIndex:toIndex];
-    
 }
+
+-(NSString *)itemArchivePath
+{
+    // Make sure that the first argument is NSDocumentDirectory
+    // and not NSDocumentationDirectory
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    // Get the one document directory from that list
+    NSString *documentDirectory = [documentDirectories firstObject];
+    
+    return [documentDirectory stringByAppendingPathComponent:@"items.archive"];
+}
+
+-(BOOL)saveChanges
+{
+    NSString *path = [self itemArchivePath];
+    
+    // Return YES on success
+    return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
+}
+
 @end
