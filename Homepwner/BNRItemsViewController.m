@@ -76,9 +76,13 @@
     cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
     
     cell.thumbnailView.image = item.thumbnail;
-
+    
+    __weak BNRItemCell *weakCell = cell;
+    
     cell.actionBlock = ^{
         NSLog(@"Going to show image for%@", item);
+        
+        BNRItemCell *strongCell = weakCell;
         
         if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
             NSString *itemKey = item.itemKey;
@@ -90,7 +94,8 @@
             }
             
             // Make a rectangle for the frame of the thumbnail relative to our table view
-            CGRect rect = [self.view convertRect:cell.thumbnailView.bounds fromView:cell.thumbnailView];
+            
+            CGRect rect =[self.view convertRect:strongCell.thumbnailView.bounds fromView:strongCell.thumbnailView];
             
             // Create a new BNRImageViewController and set its image
             BNRImageViewController *ivc = [[BNRImageViewController alloc] init];
