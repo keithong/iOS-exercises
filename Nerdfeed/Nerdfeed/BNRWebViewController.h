@@ -10,7 +10,7 @@
 
 @class BNRWebViewController;
 
-@interface BNRWebViewController : UIViewController
+@interface BNRWebViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (nonatomic) NSURL *URL;
 @property (nonatomic) BNRWebViewController *webViewController;
