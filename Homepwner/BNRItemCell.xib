@@ -47,6 +47,16 @@
                             <constraint firstAttribute="width" constant="43" id="eUG-fX-vhz"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUU-07-zva">
+                        <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="showImage:" destination="Ogx-KD-GBU" eventType="touchUpInside" id="I2w-oL-Bz2"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="Jor-iv-VHF" secondAttribute="centerY" id="3jN-Fp-j1y"/>
@@ -55,12 +65,16 @@
                     <constraint firstAttribute="centerY" secondItem="0CA-oQ-YT3" secondAttribute="centerY" id="Btw-eS-mJM"/>
                     <constraint firstAttribute="trailing" secondItem="Jor-iv-VHF" secondAttribute="trailing" constant="20" id="EPF-8y-8wF"/>
                     <constraint firstAttribute="bottom" secondItem="vpW-1r-2OY" secondAttribute="bottom" constant="2" id="JWf-D6-sD3"/>
+                    <constraint firstItem="LUU-07-zva" firstAttribute="bottom" secondItem="0CA-oQ-YT3" secondAttribute="bottom" id="M4i-aT-1c5"/>
+                    <constraint firstItem="LUU-07-zva" firstAttribute="top" secondItem="0CA-oQ-YT3" secondAttribute="top" id="Nbd-f5-nuf"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="T0r-9O-Ofs" secondAttribute="bottom" constant="18" id="U1I-cp-Lww"/>
                     <constraint firstItem="vpW-1r-2OY" firstAttribute="top" secondItem="wKO-Ql-LNh" secondAttribute="top" constant="20" id="UVz-PN-hgX"/>
+                    <constraint firstItem="LUU-07-zva" firstAttribute="trailing" secondItem="0CA-oQ-YT3" secondAttribute="trailing" id="X54-ix-pcO"/>
                     <constraint firstItem="0CA-oQ-YT3" firstAttribute="leading" secondItem="wKO-Ql-LNh" secondAttribute="leading" id="XZp-aX-CnI"/>
                     <constraint firstItem="vpW-1r-2OY" firstAttribute="leading" secondItem="0CA-oQ-YT3" secondAttribute="trailing" constant="9" id="hRv-qF-Kco"/>
                     <constraint firstItem="Jor-iv-VHF" firstAttribute="leading" secondItem="vpW-1r-2OY" secondAttribute="trailing" constant="164" id="iIW-2n-z1r"/>
                     <constraint firstItem="T0r-9O-Ofs" firstAttribute="top" secondItem="wKO-Ql-LNh" secondAttribute="top" constant="4" id="iqf-Ew-pze"/>
+                    <constraint firstItem="LUU-07-zva" firstAttribute="leading" secondItem="0CA-oQ-YT3" secondAttribute="leading" id="z76-qT-7PU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

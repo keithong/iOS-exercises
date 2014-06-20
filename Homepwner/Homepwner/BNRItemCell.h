@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
 
+@property(copy, nonatomic)void(^actionBlock)(void);
+
 @end
