@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="43" id="3HT-nU-uGG"/>
-                            <constraint firstAttribute="width" constant="43" id="eUG-fX-vhz"/>
+                            <constraint firstAttribute="width" constant="43" placeholder="YES" id="eUG-fX-vhz"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUU-07-zva">
