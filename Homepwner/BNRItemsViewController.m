@@ -11,6 +11,7 @@
 #import "BNRDetailViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRItemCell.h"
 
 @interface BNRItemsViewController()
 
@@ -56,11 +57,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     // Get a new or recycled cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                        forIndexPath:indexPath];
-    
+    BNRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BNRItemCell" forIndexPath:indexPath];
     
     // Set the text on the cell with the description of the item
     // that is at the nth index of items, where n = row this cell
@@ -68,7 +66,12 @@
     NSArray *items = [[BNRItemStore sharedStore] allItems];
     BNRItem *item = items[indexPath.row];
     
-    cell.textLabel.text =[item description];
+    // Configure the cell with the BNRItem
+    cell.nameLabel.text = item.itemName;
+    cell.serialLabel.text = item.serialNumber;
+    cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+    
+    cell.thumbnailView.image = item.thumbnail;
     
     return cell;
 }
@@ -76,8 +79,12 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"UITableViewCell"];
+    
+    // Load the NIB file
+    UINib *nib = [UINib nibWithNibName:@"BNRItemCell" bundle:nil];
+    
+    // Register this NIB, which contains the cell
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"BNRItemCell"];
     
     /*
         -- WE WANT TO REPLACE THE HEADER VIEW WITH THE NAVBAR --

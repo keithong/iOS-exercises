@@ -98,6 +98,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="F6j-1f-KKT" firstAttribute="top" secondItem="YLS-na-uom" secondAttribute="bottom" constant="8" id="11s-9U-gk9"/>
+                <constraint firstItem="WkX-V5-8BE" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="47" id="1Y6-rY-yFv"/>
                 <constraint firstItem="J04-Li-7m7" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="43" id="85O-8x-Fdd"/>
                 <constraint firstItem="F6j-1f-KKT" firstAttribute="baseline" secondItem="J04-Li-7m7" secondAttribute="baseline" constant="-2" id="9Zd-vR-HJG"/>
                 <constraint firstItem="F6j-1f-KKT" firstAttribute="leading" secondItem="J04-Li-7m7" secondAttribute="trailing" constant="12" id="9al-la-v9B"/>
@@ -113,6 +114,7 @@
                 <constraint firstItem="w0y-Zd-009" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="43" id="bfK-se-GWg"/>
                 <constraint firstAttribute="trailing" secondItem="F6j-1f-KKT" secondAttribute="trailing" constant="43" id="c10-bs-96e"/>
                 <constraint firstItem="xsQ-ac-1Yc" firstAttribute="baseline" secondItem="h4e-dF-TF5" secondAttribute="baseline" id="cUV-tA-ERl"/>
+                <constraint firstAttribute="trailing" secondItem="WkX-V5-8BE" secondAttribute="trailing" constant="43" id="fQW-By-htf"/>
                 <constraint firstItem="w0y-Zd-009" firstAttribute="top" secondItem="h4e-dF-TF5" secondAttribute="bottom" constant="17" id="gzb-RX-XmW"/>
                 <constraint firstItem="h4e-dF-TF5" firstAttribute="leading" secondItem="WkX-V5-8BE" secondAttribute="leading" constant="-4" id="hR8-tE-OQ6"/>
                 <constraint firstItem="WkX-V5-8BE" firstAttribute="top" secondItem="h4e-dF-TF5" secondAttribute="bottom" constant="89" id="hfB-4V-S4z"/>
