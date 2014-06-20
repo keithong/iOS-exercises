@@ -19,6 +19,8 @@
 		F0F2C1161953EE7900E53AC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F2C0FE1953EE7900E53AC2 /* UIKit.framework */; };
 		F0F2C11E1953EE7900E53AC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0F2C11C1953EE7900E53AC2 /* InfoPlist.strings */; };
 		F0F2C1201953EE7900E53AC2 /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2C11F1953EE7900E53AC2 /* NerdfeedTests.m */; };
+		F0F2C12B1953EEBE00E53AC2 /* BNRCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2C12A1953EEBE00E53AC2 /* BNRCoursesViewController.m */; };
+		F0F2C12E19540F1500E53AC2 /* BNRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2C12D19540F1500E53AC2 /* BNRWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		F0F2C11B1953EE7900E53AC2 /* NerdfeedTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NerdfeedTests-Info.plist"; sourceTree = "<group>"; };
 		F0F2C11D1953EE7900E53AC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0F2C11F1953EE7900E53AC2 /* NerdfeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NerdfeedTests.m; sourceTree = "<group>"; };
+		F0F2C1291953EEBE00E53AC2 /* BNRCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCoursesViewController.h; sourceTree = "<group>"; };
+		F0F2C12A1953EEBE00E53AC2 /* BNRCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCoursesViewController.m; sourceTree = "<group>"; };
+		F0F2C12C19540F1500E53AC2 /* BNRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRWebViewController.h; sourceTree = "<group>"; };
+		F0F2C12D19540F1500E53AC2 /* BNRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 			children = (
 				F0F2C1091953EE7900E53AC2 /* BNRAppDelegate.h */,
 				F0F2C10A1953EE7900E53AC2 /* BNRAppDelegate.m */,
+				F0F2C1291953EEBE00E53AC2 /* BNRCoursesViewController.h */,
+				F0F2C12A1953EEBE00E53AC2 /* BNRCoursesViewController.m */,
+				F0F2C12C19540F1500E53AC2 /* BNRWebViewController.h */,
+				F0F2C12D19540F1500E53AC2 /* BNRWebViewController.m */,
 				F0F2C10C1953EE7900E53AC2 /* Images.xcassets */,
 				F0F2C1011953EE7900E53AC2 /* Supporting Files */,
 			);
@@ -240,8 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F2C12E19540F1500E53AC2 /* BNRWebViewController.m in Sources */,
 				F0F2C1071953EE7900E53AC2 /* main.m in Sources */,
 				F0F2C10B1953EE7900E53AC2 /* BNRAppDelegate.m in Sources */,
+				F0F2C12B1953EEBE00E53AC2 /* BNRCoursesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +376,7 @@
 				GCC_PREFIX_HEADER = "Nerdfeed/Nerdfeed-Prefix.pch";
 				INFOPLIST_FILE = "Nerdfeed/Nerdfeed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -377,6 +390,7 @@
 				GCC_PREFIX_HEADER = "Nerdfeed/Nerdfeed-Prefix.pch";
 				INFOPLIST_FILE = "Nerdfeed/Nerdfeed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
