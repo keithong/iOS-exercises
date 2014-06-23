@@ -8,6 +8,7 @@
 
 #import "UIEAppDelegate.h"
 #import "UIEMainTableViewController.h"
+#import "UIEButtonViewController.h"
 
 @implementation UIEAppDelegate
 
@@ -21,6 +22,7 @@
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController: mainTableViewController];
     
     self.window.rootViewController = navController;
+
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

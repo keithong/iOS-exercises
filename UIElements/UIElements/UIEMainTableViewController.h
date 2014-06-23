@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIEViewStore.h"
 
 @interface UIEMainTableViewController : UITableViewController
+
+@property (nonatomic, retain)NSMutableArray *array;
+
 
 @end
