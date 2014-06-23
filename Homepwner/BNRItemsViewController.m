@@ -54,6 +54,12 @@
         
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc addObserver:self selector:@selector(updateTableViewForDynamicTypeSize) name:UIContentSizeCategoryDidChangeNotification object:nil];
+        
+        // Register for locale change notifications
+        [nc addObserver:self
+               selector:@selector(localeChanged:)
+                   name:NSCurrentLocaleDidChangeNotification
+                 object:nil];
     }
     
     return self;
@@ -84,7 +90,14 @@
     // Configure the cell with the BNRItem
     cell.nameLabel.text = item.itemName;
     cell.serialLabel.text = item.serialNumber;
-    cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+    // Create a number formatter for currency
+    static NSNumberFormatter *currencyFormatter = nil;
+    if(currencyFormatter == nil){
+        currencyFormatter = [[NSNumberFormatter alloc] init];
+        currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+        
+    }
+    cell.valueLabel.text = [currencyFormatter stringFromNumber:@(item.valueInDollars)];
     
     cell.thumbnailView.image = item.thumbnail;
     
@@ -137,10 +150,10 @@
     self.tableView.restorationIdentifier = @"BNRItemsViewControllerTableView";
     
     /*
-        -- WE WANT TO REPLACE THE HEADER VIEW WITH THE NAVBAR --
+     -- WE WANT TO REPLACE THE HEADER VIEW WITH THE NAVBAR --
      UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
-
+     [self.tableView setTableHeaderView:header];
+     
      */
     
 }
@@ -150,7 +163,7 @@
     
     // Create a new BNRItem and add it to the store
     BNRItem *newItem = [[BNRItemStore sharedStore]createItem];
-
+    
     BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:YES];
     
     detailViewController.item = newItem;
@@ -173,52 +186,52 @@
  ----THIS CODE BLOCK HAS BEEN REPLACED BY THE NAVBAR FUNCTIONALITIES----
  
  
--(IBAction)toggleEditingMode:(id)sender
-{
-    // If you are currently in editing mode:
-    if(self.isEditing){
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-    }
-}
-
--(UIView *)headerView
-{
-    // If you have not loaded the headerView yet..
-    if(!_headerView){
-        // Load the HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return _headerView;
-}
+ -(IBAction)toggleEditingMode:(id)sender
+ {
+ // If you are currently in editing mode:
+ if(self.isEditing){
+ // Change text of button to inform user of state
+ [sender setTitle:@"Edit" forState:UIControlStateNormal];
  
-------END-----
-*/
+ // Turn off editing mode
+ [self setEditing:NO animated:YES];
+ } else {
+ // Change text of button to inform user of state
+ [sender setTitle:@"Done" forState:UIControlStateNormal];
+ 
+ // Enter editing mode
+ [self setEditing:YES animated:YES];
+ }
+ }
+ 
+ -(UIView *)headerView
+ {
+ // If you have not loaded the headerView yet..
+ if(!_headerView){
+ // Load the HeaderView.xib
+ [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+ }
+ return _headerView;
+ }
+ 
+ ------END-----
+ */
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     // If the table view is asking to commit a delete command:
     if(editingStyle == UITableViewCellEditingStyleDelete) {
-    
+        
         NSArray *items = [[BNRItemStore sharedStore] allItems];
         BNRItem *item = items[indexPath.row];
         [[BNRItemStore sharedStore] removeItem:item];
         
         // Also remove that row from the table view with an animation
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    
+        
     }
-
+    
 }
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
@@ -243,7 +256,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tableView reloadData];
-
+    
     [self updateTableViewForDynamicTypeSize];
 }
 
@@ -322,6 +335,11 @@
         }
     }
     return indexPath;
+}
+
+-(void)localeChanged:(NSNotification *)note
+{
+    [self.tableView reloadData];
 }
 
 @end
