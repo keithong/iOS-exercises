@@ -19,6 +19,7 @@
 		F0D64CEA1957F9CD0033222F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD21957F9CD0033222F /* UIKit.framework */; };
 		F0D64CF21957F9CD0033222F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0D64CF01957F9CD0033222F /* InfoPlist.strings */; };
 		F0D64CF41957F9CD0033222F /* UIElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D64CF31957F9CD0033222F /* UIElementsTests.m */; };
+		F0D64CFF1957FE3C0033222F /* UIEMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		F0D64CEF1957F9CD0033222F /* UIElementsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIElementsTests-Info.plist"; sourceTree = "<group>"; };
 		F0D64CF11957F9CD0033222F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0D64CF31957F9CD0033222F /* UIElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIElementsTests.m; sourceTree = "<group>"; };
+		F0D64CFD1957FE3C0033222F /* UIEMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEMainTableViewController.h; sourceTree = "<group>"; };
+		F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEMainTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				F0D64CDD1957F9CD0033222F /* UIEAppDelegate.h */,
 				F0D64CDE1957F9CD0033222F /* UIEAppDelegate.m */,
+				F0D64CFD1957FE3C0033222F /* UIEMainTableViewController.h */,
+				F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */,
 				F0D64CE01957F9CD0033222F /* Images.xcassets */,
 				F0D64CD51957F9CD0033222F /* Supporting Files */,
 			);
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0D64CDF1957F9CD0033222F /* UIEAppDelegate.m in Sources */,
+				F0D64CFF1957FE3C0033222F /* UIEMainTableViewController.m in Sources */,
 				F0D64CDB1957F9CD0033222F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +444,7 @@
 				F0D64CF91957F9CD0033222F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0D64CFA1957F9CD0033222F /* Build configuration list for PBXNativeTarget "UIElementsTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +453,7 @@
 				F0D64CFC1957F9CD0033222F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

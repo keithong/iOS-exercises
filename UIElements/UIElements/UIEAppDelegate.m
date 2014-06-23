@@ -7,13 +7,21 @@
 //
 
 #import "UIEAppDelegate.h"
+#import "UIEMainTableViewController.h"
 
 @implementation UIEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    // Override point for customization after application
+    
+    UIEMainTableViewController *mainTableViewController = [[UIEMainTableViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController: mainTableViewController];
+    
+    self.window.rootViewController = navController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
