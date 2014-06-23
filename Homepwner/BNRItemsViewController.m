@@ -15,7 +15,7 @@
 #import "BNRImageStore.h"
 #import "BNRImageViewController.h"
 
-@interface BNRItemsViewController() <UIPopoverControllerDelegate>
+@interface BNRItemsViewController() <UIPopoverControllerDelegate, UIDataSourceModelAssociation>
 
 @property (strong, nonatomic)UIPopoverController *imagePopover;
 
@@ -26,6 +26,11 @@
 
 @implementation BNRItemsViewController
 
++(UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)path coder:(NSCoder *)coder
+{
+    return [[self alloc] init];
+}
+
 -(instancetype)init
 {
     // Call the superclass's designated initializer
@@ -34,6 +39,9 @@
     if(self){
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
+        
+        self.restorationIdentifier = NSStringFromClass([self class]);
+        self.restorationClass = [self class];
         
         // Create a new bar button item that will send
         // addNewItem: to BNRItemsViewController
@@ -126,6 +134,8 @@
     // Register this NIB, which contains the cell
     [self.tableView registerNib:nib forCellReuseIdentifier:@"BNRItemCell"];
     
+    self.tableView.restorationIdentifier = @"BNRItemsViewControllerTableView";
+    
     /*
         -- WE WANT TO REPLACE THE HEADER VIEW WITH THE NAVBAR --
      UIView *header = self.headerView;
@@ -148,6 +158,8 @@
     detailViewController.dismissBlock = ^{[self.tableView reloadData];};
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    
+    navController.restorationIdentifier = NSStringFromClass([navController class]);
     
     navController.modalPresentationStyle = UIModalPresentationFormSheet;
     
@@ -268,4 +280,48 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc removeObserver:self];
 }
+
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeBool:self.isEditing forKey:@"TableViewIsEditing"];
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+-(void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    self.editing = [coder decodeBoolForKey:@"TableViewIsEditing"];
+    
+    [super decodeRestorableStateWithCoder:coder];
+}
+
+-(NSString *)modelIdentifierForElementAtIndexPath:(NSIndexPath *)path inView:(UIView *)view
+{
+    NSString *identifier = nil;
+    
+    if(path && view){
+        // Return an identifier of the given NSIndexPath,
+        // in case next time the data source changes
+        BNRItem *item = [[BNRItemStore sharedStore] allItems][path.row];
+        identifier = item.itemKey;
+    }
+    return identifier;
+}
+
+-(NSIndexPath *)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view
+{
+    NSIndexPath *indexPath = nil;
+    
+    if(identifier && view){
+        NSArray *items = [[BNRItemStore sharedStore] allItems];
+        for(BNRItem *item in items){
+            if([identifier isEqualToString:item.itemKey]){
+                int row = [items indexOfObjectIdenticalTo:item];
+                indexPath = [NSIndexPath indexPathForItem:row inSection:0];
+                break;
+            }
+        }
+    }
+    return indexPath;
+}
+
 @end
