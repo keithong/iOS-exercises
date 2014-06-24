@@ -40,6 +40,8 @@
 		F0F85C7C195907BD00890AE5 /* UIEAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F85C7A195907BD00890AE5 /* UIEAlertViewController.m */; };
 		F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */; };
 		F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C7E1959468F00890AE5 /* veldog.jpg */; };
+		F0F85C8319596C8300890AE5 /* UIEActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F85C8119596C8300890AE5 /* UIEActionSheetViewController.m */; };
+		F0F85C8419596C8300890AE5 /* UIEActionSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C8219596C8300890AE5 /* UIEActionSheetViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,9 @@
 		F0F85C7A195907BD00890AE5 /* UIEAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEAlertViewController.m; sourceTree = "<group>"; };
 		F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEAlertViewController.xib; sourceTree = "<group>"; };
 		F0F85C7E1959468F00890AE5 /* veldog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = veldog.jpg; sourceTree = "<group>"; };
+		F0F85C8019596C8300890AE5 /* UIEActionSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEActionSheetViewController.h; sourceTree = "<group>"; };
+		F0F85C8119596C8300890AE5 /* UIEActionSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEActionSheetViewController.m; sourceTree = "<group>"; };
+		F0F85C8219596C8300890AE5 /* UIEActionSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEActionSheetViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +167,9 @@
 			children = (
 				F0D64CE01957F9CD0033222F /* Images.xcassets */,
 				F0D64CD51957F9CD0033222F /* Supporting Files */,
+				F0F85C8019596C8300890AE5 /* UIEActionSheetViewController.h */,
+				F0F85C8119596C8300890AE5 /* UIEActionSheetViewController.m */,
+				F0F85C8219596C8300890AE5 /* UIEActionSheetViewController.xib */,
 				F0F85C79195907BD00890AE5 /* UIEAlertViewController.h */,
 				F0F85C7A195907BD00890AE5 /* UIEAlertViewController.m */,
 				F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */,
@@ -312,6 +320,7 @@
 				F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */,
 				F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */,
 				F0D64CD91957F9CD0033222F /* InfoPlist.strings in Resources */,
+				F0F85C8419596C8300890AE5 /* UIEActionSheetViewController.xib in Resources */,
 				F0D64CE11957F9CD0033222F /* Images.xcassets in Resources */,
 				F0F85C731959053C00890AE5 /* UIEToolbarViewController.xib in Resources */,
 				F0D64D1B19580D900033222F /* UIEImagesViewController.xib in Resources */,
@@ -337,6 +346,7 @@
 			files = (
 				F0D64D1A19580D900033222F /* UIEImagesViewController.m in Sources */,
 				F0D64D1019580CE20033222F /* UIETextViewController.m in Sources */,
+				F0F85C8319596C8300890AE5 /* UIEActionSheetViewController.m in Sources */,
 				F0F85C721959053C00890AE5 /* UIEToolbarViewController.m in Sources */,
 				F0D64D081958022E0033222F /* UIEControlViewController.m in Sources */,
 				F0D64CDF1957F9CD0033222F /* UIEAppDelegate.m in Sources */,

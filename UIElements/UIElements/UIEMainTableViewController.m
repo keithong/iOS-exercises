@@ -16,7 +16,7 @@
 #import "UIEToolbarViewController.h"
 #import "UIETabBarViewController.h"
 #import "UIEAlertViewController.h"
-
+#import "UIEActionSheetViewController.h"
 
 
 @implementation UIEMainTableViewController
@@ -42,6 +42,7 @@
         UIEToolbarViewController *tlbrVC =[[UIEToolbarViewController alloc] init];
         UIETabBarViewController *tabVC = [[UIETabBarViewController alloc] init];
         UIEAlertViewController *alrtVC = [[UIEAlertViewController alloc] init];
+        UIEActionSheetViewController *actnVC = [[UIEActionSheetViewController alloc] init];
         
 //        [array addObject:[NSDictionary dictionaryWithObject:btnVC forKey:@"title"]];
         
@@ -54,6 +55,7 @@
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tlbrVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tabVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([alrtVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([actnVC class]), @"title",nil]];
     }
     return self;
 }
