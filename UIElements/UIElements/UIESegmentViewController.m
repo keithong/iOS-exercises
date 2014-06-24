@@ -13,6 +13,21 @@
 @end
 
 @implementation UIESegmentViewController
+- (IBAction)segmentChange:(UISegmentedControl *)sender {
+    
+    switch (self.chooseSegment.selectedSegmentIndex) {
+        case 0:
+            self.outputLabel.text = @"You are in the first segment.";
+            break;
+        case 1:
+            self.outputLabel.text = @"You are in the second segment.";
+            break;
+            
+        default:
+            break;
+    }
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

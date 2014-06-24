@@ -39,6 +39,7 @@
 		F0F85C781959072500890AE5 /* UIETabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C761959072500890AE5 /* UIETabBarViewController.xib */; };
 		F0F85C7C195907BD00890AE5 /* UIEAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F85C7A195907BD00890AE5 /* UIEAlertViewController.m */; };
 		F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */; };
+		F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C7E1959468F00890AE5 /* veldog.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F0F85C79195907BD00890AE5 /* UIEAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEAlertViewController.h; sourceTree = "<group>"; };
 		F0F85C7A195907BD00890AE5 /* UIEAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEAlertViewController.m; sourceTree = "<group>"; };
 		F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEAlertViewController.xib; sourceTree = "<group>"; };
+		F0F85C7E1959468F00890AE5 /* veldog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = veldog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		F0D64CD51957F9CD0033222F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0F85C7E1959468F00890AE5 /* veldog.jpg */,
 				F0D64CD61957F9CD0033222F /* UIElements-Info.plist */,
 				F0D64CD71957F9CD0033222F /* InfoPlist.strings */,
 				F0D64CDA1957F9CD0033222F /* main.m */,
@@ -305,6 +308,7 @@
 				F0D64D1119580CE20033222F /* UIETextViewController.xib in Resources */,
 				F0D64D091958022E0033222F /* UIEControlViewController.xib in Resources */,
 				F0F85C6E1958FE2800890AE5 /* UIESegmentViewController.xib in Resources */,
+				F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */,
 				F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */,
 				F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */,
 				F0D64CD91957F9CD0033222F /* InfoPlist.strings in Resources */,

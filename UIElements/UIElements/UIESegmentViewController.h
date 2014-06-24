@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIESegmentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *outputLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *chooseSegment;
 
 @end

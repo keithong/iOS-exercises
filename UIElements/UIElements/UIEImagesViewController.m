@@ -17,6 +17,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
         // Custom initialization
     }
@@ -27,6 +28,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIImage *image = [UIImage imageNamed:@"veldog.jpg"];
+    [self.imageView setImage:image];
+    [self.thumbView setImage:image];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +39,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

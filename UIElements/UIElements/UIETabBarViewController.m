@@ -9,7 +9,6 @@
 #import "UIETabBarViewController.h"
 
 @interface UIETabBarViewController ()
-
 @end
 
 @implementation UIETabBarViewController
@@ -27,12 +26,30 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    // Override point for customization after application launch.
+    [self createTabBar];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)createTabBar
+{
+    UITabBar *myTabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 52, 320, 44)];
+    
+    UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTitle:@"first tab" image:nil selectedImage:nil];
+    
+    UITabBarItem *secondTab = [[UITabBarItem alloc] initWithTitle:@"second tab" image:nil selectedImage:nil];
+
+    NSArray *tabBarButtons = [NSArray arrayWithObjects:firstTab, secondTab, nil];
+    
+    [myTabBar setItems:tabBarButtons];
+    
+    [self.view addSubview:myTabBar];
 }
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIEToolbarViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *outputLabel;
 
 @end

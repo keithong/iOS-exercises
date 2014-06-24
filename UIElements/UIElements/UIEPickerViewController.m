@@ -33,7 +33,6 @@
     charList = [[NSMutableArray alloc]init];
     charList = [NSMutableArray arrayWithObjects:@"Rick Grimes", @"Daryl Dixon", @"Michonne", @"Carl Grimes",@"The Governor", @"Shane Walsh", @"Herschel Greene", nil];
 
-    NSLog(@"%@",charList);
 }
 
 - (void)didReceiveMemoryWarning

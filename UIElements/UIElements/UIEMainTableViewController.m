@@ -32,7 +32,8 @@
         array = [[NSMutableArray alloc] init];
         
         // Create an object for every view controller
-        UIEButtonViewController *btnVC = [[UIEButtonViewController alloc] init];
+//        UIEButtonViewController *btnVC = [[UIEButtonViewController alloc] initWithNibName:@"UIEButtonViewController" bundle:nil];
+        UIEButtonViewController *btnVC = [[UIEButtonViewController alloc]init];
         UIEControlViewController *ctrlVC = [[UIEControlViewController alloc] init];
         UIETextViewController *txtVC = [[UIETextViewController alloc] init];
         UIEPickerViewController *pckrVC = [[UIEPickerViewController alloc] init];
@@ -41,7 +42,9 @@
         UIEToolbarViewController *tlbrVC =[[UIEToolbarViewController alloc] init];
         UIETabBarViewController *tabVC = [[UIETabBarViewController alloc] init];
         UIEAlertViewController *alrtVC = [[UIEAlertViewController alloc] init];
-
+        
+//        [array addObject:[NSDictionary dictionaryWithObject:btnVC forKey:@"title"]];
+        
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ctrlVC class]), @"title", nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([txtVC class]), @"title", nil]];
@@ -90,6 +93,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     // Do not use UIViewController class because it throws an exception
     // Get the class of the selected cell and use that
     Class classPicker = NSClassFromString([NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]);
+    
     id viewController  = [[classPicker alloc]
                            initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]
                            bundle:[NSBundle mainBundle]];
