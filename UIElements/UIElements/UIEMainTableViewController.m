@@ -38,23 +38,14 @@
 //        [array addObject:[NSDictionary dictionaryWithObject:pvc forKey:@"title"]];
 //        [array addObject:[NSDictionary dictionaryWithObject:ivc forKey:@"title"]];
         
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:bvc, @"title",
-                          @"UIEButtonViewController", @"label",
-                          nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:cvc, @"title",
-                          @"UIEControlViewController", @"label",
-                          nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:tvc, @"title",
-                          @"UIETextViewController", @"label",
-                          nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:pvc, @"title",
-                          @"UIEPickerViewController", @"label",
-                          nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:ivc, @"title",
-                          @"UIEImagesViewController", @"label",
-                          nil]];
-        
-      
+//        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:bvc, @"title",
+//                          @"UIEButtonViewController", @"label",
+//                          nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([bvc class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([cvc class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tvc class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([pvc class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ivc class]), @"title",nil]];
     }
     return self;
 }
@@ -77,11 +68,9 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
                              initWithStyle:UITableViewCellStyleDefault
                              reuseIdentifier:@"UITableViewCell"];
     
-    
-    
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
-    NSLog(@"dictionary: %@", [dictionary objectForKey:@"label"]);
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"label"]];
+    NSLog(@"dictionary: %@", [dictionary objectForKey:@"title"]);
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]];
     
     
     return cell;
@@ -93,7 +82,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     NSLog(@"Selected : %i", indexPath.row);
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
     UIViewController *viewController = [[UIViewController alloc]
-                                        initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"label"]]
+                                        initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]
                                     bundle:[NSBundle mainBundle]];
     [self.navigationController pushViewController:viewController animated:YES];
 }

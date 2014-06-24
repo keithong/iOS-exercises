@@ -31,6 +31,8 @@
 		F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D64D1419580D460033222F /* UIEPickerViewController.xib */; };
 		F0D64D1A19580D900033222F /* UIEImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D64D1819580D900033222F /* UIEImagesViewController.m */; };
 		F0D64D1B19580D900033222F /* UIEImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D64D1919580D900033222F /* UIEImagesViewController.xib */; };
+		F0F85C681958FD5D00890AE5 /* UIEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F85C661958FD5D00890AE5 /* UIEViewController.m */; };
+		F0F85C691958FD5D00890AE5 /* UIEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F85C671958FD5D00890AE5 /* UIEViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,9 @@
 		F0D64D1719580D900033222F /* UIEImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEImagesViewController.h; sourceTree = "<group>"; };
 		F0D64D1819580D900033222F /* UIEImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEImagesViewController.m; sourceTree = "<group>"; };
 		F0D64D1919580D900033222F /* UIEImagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEImagesViewController.xib; sourceTree = "<group>"; };
+		F0F85C651958FD5D00890AE5 /* UIEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEViewController.h; sourceTree = "<group>"; };
+		F0F85C661958FD5D00890AE5 /* UIEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEViewController.m; sourceTree = "<group>"; };
+		F0F85C671958FD5D00890AE5 /* UIEViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +164,9 @@
 				F0D64D0D19580CE10033222F /* UIETextViewController.h */,
 				F0D64D0E19580CE10033222F /* UIETextViewController.m */,
 				F0D64D0F19580CE20033222F /* UIETextViewController.xib */,
+				F0F85C651958FD5D00890AE5 /* UIEViewController.h */,
+				F0F85C661958FD5D00890AE5 /* UIEViewController.m */,
+				F0F85C671958FD5D00890AE5 /* UIEViewController.xib */,
 				F0D64D0A1958093A0033222F /* UIEViewStore.h */,
 				F0D64D0B1958093A0033222F /* UIEViewStore.m */,
 			);
@@ -270,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F85C691958FD5D00890AE5 /* UIEViewController.xib in Resources */,
 				F0D64D1119580CE20033222F /* UIETextViewController.xib in Resources */,
 				F0D64D091958022E0033222F /* UIEControlViewController.xib in Resources */,
 				F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */,
@@ -303,6 +312,7 @@
 				F0D64D1519580D460033222F /* UIEPickerViewController.m in Sources */,
 				F0D64CFF1957FE3C0033222F /* UIEMainTableViewController.m in Sources */,
 				F0D64D03195801790033222F /* UIEButtonViewController.m in Sources */,
+				F0F85C681958FD5D00890AE5 /* UIEViewController.m in Sources */,
 				F0D64CDB1957F9CD0033222F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
