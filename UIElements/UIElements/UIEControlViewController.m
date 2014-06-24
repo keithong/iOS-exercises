@@ -15,6 +15,10 @@
 @implementation UIEControlViewController
 - (IBAction)sliderValueChanged:(UISlider *)sender {
     
+    if((int)sender.value > 9000){
+        self.volumeLabel.text = @"Over 9000!";
+        return;
+    }
     self.volumeLabel.text = [NSString stringWithFormat:@"%i", (int)sender.value];
     
 }
