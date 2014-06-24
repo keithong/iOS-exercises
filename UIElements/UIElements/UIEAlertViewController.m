@@ -8,11 +8,35 @@
 
 #import "UIEAlertViewController.h"
 
-@interface UIEAlertViewController ()
+@interface UIEAlertViewController () <UIAlertViewDelegate>
+
 
 @end
 
 @implementation UIEAlertViewController
+- (IBAction)clearLabel:(id)sender {
+    
+    UIAlertView *clear = [[UIAlertView alloc]
+                          initWithTitle:@"Clear Label"
+                          message:@"The label is begging not to be cleared. Are you sure you want to clear it?"
+                          delegate:self
+                          cancelButtonTitle:@"NO"
+                          otherButtonTitles:@"Yes",nil];
+    
+    [clear show];
+    
+}
+- (IBAction)alertPop:(id)sender {
+    
+    UIAlertView *greet = [[UIAlertView alloc]
+                            initWithTitle:@"Greet!"
+                            message:@"Hello, World!"
+                            delegate:nil
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
+    
+    [greet show];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +57,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Yes"])
+    {
+        self.sampleLabel.text = @"";
+        return;
+    }
 }
 
 @end

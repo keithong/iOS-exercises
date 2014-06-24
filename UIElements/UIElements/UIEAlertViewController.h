@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIEAlertViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *sampleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+@property (weak, nonatomic) IBOutlet UIButton *greetButton;
 
 @end
