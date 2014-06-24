@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIEButtonViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *labelOutput;
+@property (weak, nonatomic) IBOutlet UIButton *btnCookie;
+@property (weak, nonatomic) IBOutlet UIButton *btnGreet;
 
 @end

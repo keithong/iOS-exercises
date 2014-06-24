@@ -1,18 +1,18 @@
 //
-//  UIEViewController.m
+//  UIEAlertViewController.m
 //  UIElements
 //
 //  Created by Keith Samson on 6/24/14.
 //  Copyright (c) 2014 Keith Samson. All rights reserved.
 //
 
-#import "UIEViewController.h"
+#import "UIEAlertViewController.h"
 
-@interface UIEViewController ()
+@interface UIEAlertViewController ()
 
 @end
 
-@implementation UIEViewController
+@implementation UIEAlertViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

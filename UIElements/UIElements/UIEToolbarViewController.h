@@ -1,5 +1,5 @@
 //
-//  UIEViewController.h
+//  UIEToolbarViewController.h
 //  UIElements
 //
 //  Created by Keith Samson on 6/24/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIEViewController : UIViewController
+@interface UIEToolbarViewController : UIViewController
 
 @end

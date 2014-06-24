@@ -12,6 +12,11 @@
 #import "UIETextViewController.h"
 #import "UIEPickerViewController.h"
 #import "UIEImagesViewController.h"
+#import "UIESegmentViewController.h"
+#import "UIEToolbarViewController.h"
+#import "UIETabBarViewController.h"
+#import "UIEAlertViewController.h"
+
 
 
 @implementation UIEMainTableViewController
@@ -21,31 +26,31 @@
 -(instancetype)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
+    self.title = @"UIElements";
     
     if (self) {
         array = [[NSMutableArray alloc] init];
         
-        //Button
-        UIEButtonViewController *bvc = [[UIEButtonViewController alloc] init];
-        UIEControlViewController *cvc = [[UIEControlViewController alloc] init];
-        UIETextViewController *tvc = [[UIETextViewController alloc] init];
-        UIEPickerViewController *pvc = [[UIEPickerViewController alloc] init];
-        UIEImagesViewController *ivc = [[UIEImagesViewController alloc] init];
-        
-//        [array addObject:[NSDictionary dictionaryWithObject:bvc forKey:@"title"]];
-//        [array addObject:[NSDictionary dictionaryWithObject:cvc forKey:@"title"]];
-//        [array addObject:[NSDictionary dictionaryWithObject:tvc forKey:@"title"]];
-//        [array addObject:[NSDictionary dictionaryWithObject:pvc forKey:@"title"]];
-//        [array addObject:[NSDictionary dictionaryWithObject:ivc forKey:@"title"]];
-        
-//        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:bvc, @"title",
-//                          @"UIEButtonViewController", @"label",
-//                          nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([bvc class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([cvc class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tvc class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([pvc class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ivc class]), @"title",nil]];
+        // Create an object for every view controller
+        UIEButtonViewController *btnVC = [[UIEButtonViewController alloc] init];
+        UIEControlViewController *ctrlVC = [[UIEControlViewController alloc] init];
+        UIETextViewController *txtVC = [[UIETextViewController alloc] init];
+        UIEPickerViewController *pckrVC = [[UIEPickerViewController alloc] init];
+        UIEImagesViewController *imgsVC = [[UIEImagesViewController alloc] init];
+        UIESegmentViewController *sgmntVC = [[UIESegmentViewController alloc] init];
+        UIEToolbarViewController *tlbrVC =[[UIEToolbarViewController alloc] init];
+        UIETabBarViewController *tabVC = [[UIETabBarViewController alloc] init];
+        UIEAlertViewController *alrtVC = [[UIEAlertViewController alloc] init];
+
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ctrlVC class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([txtVC class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([pckrVC class]), @"title", nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([imgsVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([sgmntVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tlbrVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tabVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([alrtVC class]), @"title",nil]];
     }
     return self;
 }
@@ -69,7 +74,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
                              reuseIdentifier:@"UITableViewCell"];
     
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
-    NSLog(@"dictionary: %@", [dictionary objectForKey:@"title"]);
+//    NSLog(@"dictionary: %@", [dictionary objectForKey:@"title"]);
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]];
     
     
@@ -81,9 +86,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Selected : %i", indexPath.row);
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
-    UIViewController *viewController = [[UIViewController alloc]
-                                        initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]
-                                    bundle:[NSBundle mainBundle]];
+    
+    // Do not use UIViewController class because it throws an exception
+    // Get the class of the selected cell and use that
+    Class classPicker = NSClassFromString([NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]);
+    id viewController  = [[classPicker alloc]
+                           initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]
+                           bundle:[NSBundle mainBundle]];
+    
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
