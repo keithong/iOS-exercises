@@ -38,12 +38,12 @@
 
 -(void)attemptConnect
 {
+
     NSString *url = [NSString stringWithFormat:@"http://ads.cyscorpions.com/en/trainingcenter/"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               
                                if (!connectionError) {
                                    [self.blockWebView loadRequest:request];
                                    return;
@@ -54,10 +54,9 @@
                                                             delegate:self
                                                             cancelButtonTitle:@"OK"
                                                             otherButtonTitles:nil];
-                               [errorConnect show];
-
-    }];
-    
+                               [errorConnect show]; }
+     
+     ];
 }
 
 @end

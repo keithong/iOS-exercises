@@ -20,7 +20,8 @@
 #import "UIEGameScreenViewController.h"
 #import "UIEWebViewController.h"
 #import "UIEBlocksViewController.h"
-
+#import "UIECoreLocationViewController.h"
+#import "UIEMapViewController.h"
 
 @implementation UIEMainTableViewController
 
@@ -49,6 +50,8 @@
         UIEGameScreenViewController *gmScrnVC = [[UIEGameScreenViewController alloc] init];
         UIEWebViewController *wbVC = [[UIEWebViewController alloc] init];
         UIEBlocksViewController *blcksVC = [[UIEBlocksViewController alloc]init];
+        UIECoreLocationViewController *crLctnVC = [[UIECoreLocationViewController alloc]init];
+        UIEMapViewController *mpVC = [[UIEMapViewController alloc]init];
 //        [array addObject:[NSDictionary dictionaryWithObject:btnVC forKey:@"title"]];
         
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
@@ -64,7 +67,8 @@
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([gmScrnVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([wbVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
-    }
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([crLctnVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];}
     return self;
 }
 

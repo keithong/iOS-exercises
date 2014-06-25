@@ -15,6 +15,11 @@
 		F0176938195A9B18009456B9 /* UIEWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0176936195A9B18009456B9 /* UIEWebViewController.xib */; };
 		F017693C195A9FCD009456B9 /* UIEBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */; };
 		F017693D195A9FCD009456B9 /* UIEBlocksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */; };
+		F0176941195AA401009456B9 /* UIECoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F017693F195AA401009456B9 /* UIECoreLocationViewController.m */; };
+		F0176942195AA401009456B9 /* UIECoreLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0176940195AA401009456B9 /* UIECoreLocationViewController.xib */; };
+		F0176946195AB033009456B9 /* UIEMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0176944195AB033009456B9 /* UIEMapViewController.m */; };
+		F0176947195AB033009456B9 /* UIEMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0176945195AB033009456B9 /* UIEMapViewController.xib */; };
+		F0176949195AB048009456B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0176948195AB048009456B9 /* MapKit.framework */; };
 		F0D64CCF1957F9CD0033222F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CCE1957F9CD0033222F /* Foundation.framework */; };
 		F0D64CD11957F9CD0033222F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD01957F9CD0033222F /* CoreGraphics.framework */; };
 		F0D64CD31957F9CD0033222F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD21957F9CD0033222F /* UIKit.framework */; };
@@ -75,6 +80,13 @@
 		F0176939195A9FCD009456B9 /* UIEBlocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEBlocksViewController.h; sourceTree = "<group>"; };
 		F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEBlocksViewController.m; sourceTree = "<group>"; };
 		F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEBlocksViewController.xib; sourceTree = "<group>"; };
+		F017693E195AA401009456B9 /* UIECoreLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIECoreLocationViewController.h; sourceTree = "<group>"; };
+		F017693F195AA401009456B9 /* UIECoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIECoreLocationViewController.m; sourceTree = "<group>"; };
+		F0176940195AA401009456B9 /* UIECoreLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIECoreLocationViewController.xib; sourceTree = "<group>"; };
+		F0176943195AB033009456B9 /* UIEMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEMapViewController.h; sourceTree = "<group>"; };
+		F0176944195AB033009456B9 /* UIEMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEMapViewController.m; sourceTree = "<group>"; };
+		F0176945195AB033009456B9 /* UIEMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEMapViewController.xib; sourceTree = "<group>"; };
+		F0176948195AB048009456B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F0D64CCB1957F9CD0033222F /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D64CCE1957F9CD0033222F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0D64CD01957F9CD0033222F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +147,7 @@
 			files = (
 				F0D64CD11957F9CD0033222F /* CoreGraphics.framework in Frameworks */,
 				F0D64CD31957F9CD0033222F /* UIKit.framework in Frameworks */,
+				F0176949195AB048009456B9 /* MapKit.framework in Frameworks */,
 				F0D64CCF1957F9CD0033222F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +187,7 @@
 		F0D64CCD1957F9CD0033222F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0176948195AB048009456B9 /* MapKit.framework */,
 				F0D64CCE1957F9CD0033222F /* Foundation.framework */,
 				F0D64CD01957F9CD0033222F /* CoreGraphics.framework */,
 				F0D64CD21957F9CD0033222F /* UIKit.framework */,
@@ -195,12 +209,18 @@
 				F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */,
 				F0D64CDD1957F9CD0033222F /* UIEAppDelegate.h */,
 				F0D64CDE1957F9CD0033222F /* UIEAppDelegate.m */,
+				F0176939195A9FCD009456B9 /* UIEBlocksViewController.h */,
+				F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */,
+				F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */,
 				F0D64D00195801790033222F /* UIEButtonViewController.h */,
 				F0D64D01195801790033222F /* UIEButtonViewController.m */,
 				F0D64D02195801790033222F /* UIEButtonViewController.xib */,
 				F0D64D051958022E0033222F /* UIEControlViewController.h */,
 				F0D64D061958022E0033222F /* UIEControlViewController.m */,
 				F0D64D071958022E0033222F /* UIEControlViewController.xib */,
+				F017693E195AA401009456B9 /* UIECoreLocationViewController.h */,
+				F017693F195AA401009456B9 /* UIECoreLocationViewController.m */,
+				F0176940195AA401009456B9 /* UIECoreLocationViewController.xib */,
 				F015AF1B195A76E2004CDFCB /* UIEGameScreenViewController.h */,
 				F015AF1C195A76E2004CDFCB /* UIEGameScreenViewController.m */,
 				F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */,
@@ -209,6 +229,9 @@
 				F0D64D1919580D900033222F /* UIEImagesViewController.xib */,
 				F0D64CFD1957FE3C0033222F /* UIEMainTableViewController.h */,
 				F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */,
+				F0176943195AB033009456B9 /* UIEMapViewController.h */,
+				F0176944195AB033009456B9 /* UIEMapViewController.m */,
+				F0176945195AB033009456B9 /* UIEMapViewController.xib */,
 				F015AF20195A7725004CDFCB /* UIEPauseScreenViewController.h */,
 				F015AF21195A7725004CDFCB /* UIEPauseScreenViewController.m */,
 				F015AF22195A7725004CDFCB /* UIEPauseScreenViewController.xib */,
@@ -232,9 +255,6 @@
 				F0176934195A9B18009456B9 /* UIEWebViewController.h */,
 				F0176935195A9B18009456B9 /* UIEWebViewController.m */,
 				F0176936195A9B18009456B9 /* UIEWebViewController.xib */,
-				F0176939195A9FCD009456B9 /* UIEBlocksViewController.h */,
-				F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */,
-				F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -317,6 +337,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Keith Samson";
 				TargetAttributes = {
+					F0D64CCA1957F9CD0033222F = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					F0D64CE51957F9CD0033222F = {
 						TestTargetID = F0D64CCA1957F9CD0033222F;
 					};
@@ -349,7 +376,9 @@
 				F017693D195A9FCD009456B9 /* UIEBlocksViewController.xib in Resources */,
 				F0D64D091958022E0033222F /* UIEControlViewController.xib in Resources */,
 				F0F85C6E1958FE2800890AE5 /* UIESegmentViewController.xib in Resources */,
+				F0176942195AA401009456B9 /* UIECoreLocationViewController.xib in Resources */,
 				F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */,
+				F0176947195AB033009456B9 /* UIEMapViewController.xib in Resources */,
 				F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */,
 				F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */,
 				F015AF24195A7725004CDFCB /* UIEPauseScreenViewController.xib in Resources */,
@@ -380,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0176941195AA401009456B9 /* UIECoreLocationViewController.m in Sources */,
 				F0D64D1A19580D900033222F /* UIEImagesViewController.m in Sources */,
 				F0D64D1019580CE20033222F /* UIETextViewController.m in Sources */,
 				F0F85C8319596C8300890AE5 /* UIEActionSheetViewController.m in Sources */,
@@ -388,6 +418,7 @@
 				F0D64D081958022E0033222F /* UIEControlViewController.m in Sources */,
 				F0D64CDF1957F9CD0033222F /* UIEAppDelegate.m in Sources */,
 				F0D64D0C1958093A0033222F /* UIEViewStore.m in Sources */,
+				F0176946195AB033009456B9 /* UIEMapViewController.m in Sources */,
 				F0F85C771959072500890AE5 /* UIETabBarViewController.m in Sources */,
 				F0F85C7C195907BD00890AE5 /* UIEAlertViewController.m in Sources */,
 				F015AF23195A7725004CDFCB /* UIEPauseScreenViewController.m in Sources */,
