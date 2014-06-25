@@ -42,7 +42,18 @@
 
 - (void)pauseGameDelegateMethod
 {
+    UIAlertView *notify = [[UIAlertView alloc]
+                          initWithTitle:@"Success"
+                          message:@"Successfully called the delegate method!"
+                          delegate:self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    
+    [notify show];
+
     NSLog(@"Successfully called the delegate method!");
+    
+    
 }
 
 @end

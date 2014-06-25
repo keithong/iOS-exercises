@@ -49,8 +49,10 @@
 {
     if ([switchState isOn]) {
         self.outputLabel.text = @"The light is on";
+        self.view.backgroundColor = [UIColor whiteColor];
     } else {
         self.outputLabel.text = @"The light is off";
+        self.view.backgroundColor = [UIColor blackColor];
     }
 }
 

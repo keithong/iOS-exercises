@@ -198,9 +198,6 @@
 				F0D64D071958022E0033222F /* UIEControlViewController.xib */,
 				F015AF1B195A76E2004CDFCB /* UIEGameScreenViewController.h */,
 				F015AF1C195A76E2004CDFCB /* UIEGameScreenViewController.m */,
-				F0708505195A851700508473 /* UIEWebViewController.h */,
-				F0708506195A851700508473 /* UIEWebViewController.m */,
-				F0708507195A851700508473 /* UIEWebViewController.xib */,
 				F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */,
 				F0D64D1719580D900033222F /* UIEImagesViewController.h */,
 				F0D64D1819580D900033222F /* UIEImagesViewController.m */,
@@ -227,6 +224,9 @@
 				F0F85C711959053C00890AE5 /* UIEToolbarViewController.xib */,
 				F0D64D0A1958093A0033222F /* UIEViewStore.h */,
 				F0D64D0B1958093A0033222F /* UIEViewStore.m */,
+				F0708505195A851700508473 /* UIEWebViewController.h */,
+				F0708506195A851700508473 /* UIEWebViewController.m */,
+				F0708507195A851700508473 /* UIEWebViewController.xib */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";

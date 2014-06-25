@@ -80,9 +80,9 @@ numberOfRowsInSection:(NSInteger)section
 -(UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]
-                             initWithStyle:UITableViewCellStyleDefault
-                             reuseIdentifier:@"UITableViewCell"];
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                             forIndexPath:indexPath];
     
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
 //    NSLog(@"dictionary: %@", [dictionary objectForKey:@"title"]);
@@ -90,6 +90,13 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
     
     
     return cell;
+}
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
 }
 
 -(void)tableView:(UITableView *)tableView
