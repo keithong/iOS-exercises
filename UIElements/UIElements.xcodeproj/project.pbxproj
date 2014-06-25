@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F015AF1E195A76E2004CDFCB /* UIEGameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F015AF1C195A76E2004CDFCB /* UIEGameScreenViewController.m */; };
+		F015AF1F195A76E2004CDFCB /* UIEGameScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */; };
+		F015AF23195A7725004CDFCB /* UIEPauseScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F015AF21195A7725004CDFCB /* UIEPauseScreenViewController.m */; };
+		F015AF24195A7725004CDFCB /* UIEPauseScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F015AF22195A7725004CDFCB /* UIEPauseScreenViewController.xib */; };
 		F0D64CCF1957F9CD0033222F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CCE1957F9CD0033222F /* Foundation.framework */; };
 		F0D64CD11957F9CD0033222F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD01957F9CD0033222F /* CoreGraphics.framework */; };
 		F0D64CD31957F9CD0033222F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD21957F9CD0033222F /* UIKit.framework */; };
@@ -55,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F015AF1B195A76E2004CDFCB /* UIEGameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIEGameScreenViewController.h; path = ../UIEGameScreenViewController.h; sourceTree = "<group>"; };
+		F015AF1C195A76E2004CDFCB /* UIEGameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIEGameScreenViewController.m; path = ../UIEGameScreenViewController.m; sourceTree = "<group>"; };
+		F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIEGameScreenViewController.xib; path = ../UIEGameScreenViewController.xib; sourceTree = "<group>"; };
+		F015AF20195A7725004CDFCB /* UIEPauseScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIEPauseScreenViewController.h; path = ../UIEPauseScreenViewController.h; sourceTree = "<group>"; };
+		F015AF21195A7725004CDFCB /* UIEPauseScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIEPauseScreenViewController.m; path = ../UIEPauseScreenViewController.m; sourceTree = "<group>"; };
+		F015AF22195A7725004CDFCB /* UIEPauseScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIEPauseScreenViewController.xib; path = ../UIEPauseScreenViewController.xib; sourceTree = "<group>"; };
 		F0D64CCB1957F9CD0033222F /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D64CCE1957F9CD0033222F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0D64CD01957F9CD0033222F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -181,11 +191,17 @@
 				F0D64D051958022E0033222F /* UIEControlViewController.h */,
 				F0D64D061958022E0033222F /* UIEControlViewController.m */,
 				F0D64D071958022E0033222F /* UIEControlViewController.xib */,
+				F015AF1B195A76E2004CDFCB /* UIEGameScreenViewController.h */,
+				F015AF1C195A76E2004CDFCB /* UIEGameScreenViewController.m */,
+				F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */,
 				F0D64D1719580D900033222F /* UIEImagesViewController.h */,
 				F0D64D1819580D900033222F /* UIEImagesViewController.m */,
 				F0D64D1919580D900033222F /* UIEImagesViewController.xib */,
 				F0D64CFD1957FE3C0033222F /* UIEMainTableViewController.h */,
 				F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */,
+				F015AF20195A7725004CDFCB /* UIEPauseScreenViewController.h */,
+				F015AF21195A7725004CDFCB /* UIEPauseScreenViewController.m */,
+				F015AF22195A7725004CDFCB /* UIEPauseScreenViewController.xib */,
 				F0D64D1219580D460033222F /* UIEPickerViewController.h */,
 				F0D64D1319580D460033222F /* UIEPickerViewController.m */,
 				F0D64D1419580D460033222F /* UIEPickerViewController.xib */,
@@ -319,8 +335,10 @@
 				F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */,
 				F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */,
 				F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */,
+				F015AF24195A7725004CDFCB /* UIEPauseScreenViewController.xib in Resources */,
 				F0D64CD91957F9CD0033222F /* InfoPlist.strings in Resources */,
 				F0F85C8419596C8300890AE5 /* UIEActionSheetViewController.xib in Resources */,
+				F015AF1F195A76E2004CDFCB /* UIEGameScreenViewController.xib in Resources */,
 				F0D64CE11957F9CD0033222F /* Images.xcassets in Resources */,
 				F0F85C731959053C00890AE5 /* UIEToolbarViewController.xib in Resources */,
 				F0D64D1B19580D900033222F /* UIEImagesViewController.xib in Resources */,
@@ -353,10 +371,12 @@
 				F0D64D0C1958093A0033222F /* UIEViewStore.m in Sources */,
 				F0F85C771959072500890AE5 /* UIETabBarViewController.m in Sources */,
 				F0F85C7C195907BD00890AE5 /* UIEAlertViewController.m in Sources */,
+				F015AF23195A7725004CDFCB /* UIEPauseScreenViewController.m in Sources */,
 				F0D64D1519580D460033222F /* UIEPickerViewController.m in Sources */,
 				F0D64CFF1957FE3C0033222F /* UIEMainTableViewController.m in Sources */,
 				F0D64D03195801790033222F /* UIEButtonViewController.m in Sources */,
 				F0F85C6D1958FE2800890AE5 /* UIESegmentViewController.m in Sources */,
+				F015AF1E195A76E2004CDFCB /* UIEGameScreenViewController.m in Sources */,
 				F0D64CDB1957F9CD0033222F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

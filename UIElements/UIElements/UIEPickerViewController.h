@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *characterPicker;
 
 @property (nonatomic, retain)NSMutableArray *charList;
-
 @end

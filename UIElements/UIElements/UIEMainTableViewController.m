@@ -17,6 +17,7 @@
 #import "UIETabBarViewController.h"
 #import "UIEAlertViewController.h"
 #import "UIEActionSheetViewController.h"
+#import "UIEGameScreenViewController.h"
 
 
 @implementation UIEMainTableViewController
@@ -43,7 +44,7 @@
         UIETabBarViewController *tabVC = [[UIETabBarViewController alloc] init];
         UIEAlertViewController *alrtVC = [[UIEAlertViewController alloc] init];
         UIEActionSheetViewController *actnVC = [[UIEActionSheetViewController alloc] init];
-        
+        UIEGameScreenViewController *gmScrnVC = [[UIEGameScreenViewController alloc] init];
 //        [array addObject:[NSDictionary dictionaryWithObject:btnVC forKey:@"title"]];
         
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
@@ -56,6 +57,8 @@
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tabVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([alrtVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([actnVC class]), @"title",nil]];
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([gmScrnVC class]), @"title",nil]];
+        
     }
     return self;
 }
@@ -99,6 +102,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     id viewController  = [[classPicker alloc]
                            initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]
                            bundle:[NSBundle mainBundle]];
+    NSLog(@"%@", [dictionary objectForKey:@"title"]);
     
     [self.navigationController pushViewController:viewController animated:YES];
 }
