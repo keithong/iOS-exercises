@@ -16,7 +16,7 @@
 - (IBAction)pauseButtonAction:(id)sender {
     UIEPauseScreenViewController *pauseGame = [[UIEPauseScreenViewController alloc] initWithNibName:@"UIEPauseScreenViewController" bundle:[NSBundle mainBundle]];
     [pauseGame setDelegate:self];
-    [self.navigationController pushViewController:pauseGame animated:YES];
+    [self.navigationController pushViewController:pauseGame animated:NO];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

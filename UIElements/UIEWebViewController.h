@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIEWebViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *connectButton;
+@property (weak, nonatomic) IBOutlet UIWebView *myWebView;
 
 @end

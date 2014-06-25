@@ -13,9 +13,6 @@
 @end
 
 @implementation UIEWebViewController
-- (IBAction)attemptConnect:(id)sender {
-    [self attemptConnect];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self attemptConnect];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,35 +38,22 @@
 
 -(void)attemptConnect
 {
-    NSString *url = [NSString stringWithFormat:@"http://www.google.com"];
-    
+    NSString *url = [NSString stringWithFormat:@"http://ads.cyscorpions.com/en/trainingcenter/"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    
     NSURLConnection *connect = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-  
-    
-}
-
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    UIAlertView *successConnecting = [[UIAlertView alloc]
-                                      initWithTitle:@"Success!"
-                                      message:@"You are now connected!"
-                                      delegate:self
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-    [successConnecting show];
+    [self.myWebView loadRequest:request];
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    UIAlertView *errorConnecting = [[UIAlertView alloc]
-                          initWithTitle:@"Error!"
-                          message:@"Connection failed!"
+    UIAlertView *errorConnect = [[UIAlertView alloc]
+                          initWithTitle:@"Error"
+                          message:@"Failed connect. Please try again."
                           delegate:self
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
-    [errorConnecting show];
+    
+    [errorConnect show];
 }
 
 @end

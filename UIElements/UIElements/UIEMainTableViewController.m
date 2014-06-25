@@ -19,6 +19,7 @@
 #import "UIEActionSheetViewController.h"
 #import "UIEGameScreenViewController.h"
 #import "UIEWebViewController.h"
+#import "UIEBlocksViewController.h"
 
 
 @implementation UIEMainTableViewController
@@ -46,7 +47,8 @@
         UIEAlertViewController *alrtVC = [[UIEAlertViewController alloc] init];
         UIEActionSheetViewController *actnVC = [[UIEActionSheetViewController alloc] init];
         UIEGameScreenViewController *gmScrnVC = [[UIEGameScreenViewController alloc] init];
-        UIEWebViewController *wbVC = [[UIEWebViewController alloc]init];
+        UIEWebViewController *wbVC = [[UIEWebViewController alloc] init];
+        UIEBlocksViewController *blcksVC = [[UIEBlocksViewController alloc]init];
 //        [array addObject:[NSDictionary dictionaryWithObject:btnVC forKey:@"title"]];
         
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
@@ -61,7 +63,7 @@
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([actnVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([gmScrnVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([wbVC class]), @"title",nil]];
-        
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
     }
     return self;
 }

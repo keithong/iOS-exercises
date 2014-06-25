@@ -52,7 +52,7 @@
         self.view.backgroundColor = [UIColor whiteColor];
     } else {
         self.outputLabel.text = @"The light is off";
-        self.view.backgroundColor = [UIColor blackColor];
+        self.view.backgroundColor = [UIColor grayColor];
     }
 }
 

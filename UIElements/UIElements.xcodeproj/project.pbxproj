@@ -11,8 +11,10 @@
 		F015AF1F195A76E2004CDFCB /* UIEGameScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */; };
 		F015AF23195A7725004CDFCB /* UIEPauseScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F015AF21195A7725004CDFCB /* UIEPauseScreenViewController.m */; };
 		F015AF24195A7725004CDFCB /* UIEPauseScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F015AF22195A7725004CDFCB /* UIEPauseScreenViewController.xib */; };
-		F0708508195A851700508473 /* UIEWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0708506195A851700508473 /* UIEWebViewController.m */; };
-		F0708509195A851700508473 /* UIEWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0708507195A851700508473 /* UIEWebViewController.xib */; };
+		F0176937195A9B18009456B9 /* UIEWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0176935195A9B18009456B9 /* UIEWebViewController.m */; };
+		F0176938195A9B18009456B9 /* UIEWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0176936195A9B18009456B9 /* UIEWebViewController.xib */; };
+		F017693C195A9FCD009456B9 /* UIEBlocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */; };
+		F017693D195A9FCD009456B9 /* UIEBlocksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */; };
 		F0D64CCF1957F9CD0033222F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CCE1957F9CD0033222F /* Foundation.framework */; };
 		F0D64CD11957F9CD0033222F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD01957F9CD0033222F /* CoreGraphics.framework */; };
 		F0D64CD31957F9CD0033222F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD21957F9CD0033222F /* UIKit.framework */; };
@@ -67,9 +69,12 @@
 		F015AF20195A7725004CDFCB /* UIEPauseScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIEPauseScreenViewController.h; path = ../UIEPauseScreenViewController.h; sourceTree = "<group>"; };
 		F015AF21195A7725004CDFCB /* UIEPauseScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIEPauseScreenViewController.m; path = ../UIEPauseScreenViewController.m; sourceTree = "<group>"; };
 		F015AF22195A7725004CDFCB /* UIEPauseScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIEPauseScreenViewController.xib; path = ../UIEPauseScreenViewController.xib; sourceTree = "<group>"; };
-		F0708505195A851700508473 /* UIEWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEWebViewController.h; sourceTree = "<group>"; };
-		F0708506195A851700508473 /* UIEWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEWebViewController.m; sourceTree = "<group>"; };
-		F0708507195A851700508473 /* UIEWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEWebViewController.xib; sourceTree = "<group>"; };
+		F0176934195A9B18009456B9 /* UIEWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIEWebViewController.h; path = ../UIEWebViewController.h; sourceTree = "<group>"; };
+		F0176935195A9B18009456B9 /* UIEWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIEWebViewController.m; path = ../UIEWebViewController.m; sourceTree = "<group>"; };
+		F0176936195A9B18009456B9 /* UIEWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIEWebViewController.xib; path = ../UIEWebViewController.xib; sourceTree = "<group>"; };
+		F0176939195A9FCD009456B9 /* UIEBlocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEBlocksViewController.h; sourceTree = "<group>"; };
+		F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEBlocksViewController.m; sourceTree = "<group>"; };
+		F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEBlocksViewController.xib; sourceTree = "<group>"; };
 		F0D64CCB1957F9CD0033222F /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D64CCE1957F9CD0033222F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0D64CD01957F9CD0033222F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,9 +229,12 @@
 				F0F85C711959053C00890AE5 /* UIEToolbarViewController.xib */,
 				F0D64D0A1958093A0033222F /* UIEViewStore.h */,
 				F0D64D0B1958093A0033222F /* UIEViewStore.m */,
-				F0708505195A851700508473 /* UIEWebViewController.h */,
-				F0708506195A851700508473 /* UIEWebViewController.m */,
-				F0708507195A851700508473 /* UIEWebViewController.xib */,
+				F0176934195A9B18009456B9 /* UIEWebViewController.h */,
+				F0176935195A9B18009456B9 /* UIEWebViewController.m */,
+				F0176936195A9B18009456B9 /* UIEWebViewController.xib */,
+				F0176939195A9FCD009456B9 /* UIEBlocksViewController.h */,
+				F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */,
+				F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0D64D1119580CE20033222F /* UIETextViewController.xib in Resources */,
+				F017693D195A9FCD009456B9 /* UIEBlocksViewController.xib in Resources */,
 				F0D64D091958022E0033222F /* UIEControlViewController.xib in Resources */,
 				F0F85C6E1958FE2800890AE5 /* UIESegmentViewController.xib in Resources */,
 				F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */,
@@ -346,7 +355,7 @@
 				F015AF24195A7725004CDFCB /* UIEPauseScreenViewController.xib in Resources */,
 				F0D64CD91957F9CD0033222F /* InfoPlist.strings in Resources */,
 				F0F85C8419596C8300890AE5 /* UIEActionSheetViewController.xib in Resources */,
-				F0708509195A851700508473 /* UIEWebViewController.xib in Resources */,
+				F0176938195A9B18009456B9 /* UIEWebViewController.xib in Resources */,
 				F015AF1F195A76E2004CDFCB /* UIEGameScreenViewController.xib in Resources */,
 				F0D64CE11957F9CD0033222F /* Images.xcassets in Resources */,
 				F0F85C731959053C00890AE5 /* UIEToolbarViewController.xib in Resources */,
@@ -375,6 +384,7 @@
 				F0D64D1019580CE20033222F /* UIETextViewController.m in Sources */,
 				F0F85C8319596C8300890AE5 /* UIEActionSheetViewController.m in Sources */,
 				F0F85C721959053C00890AE5 /* UIEToolbarViewController.m in Sources */,
+				F017693C195A9FCD009456B9 /* UIEBlocksViewController.m in Sources */,
 				F0D64D081958022E0033222F /* UIEControlViewController.m in Sources */,
 				F0D64CDF1957F9CD0033222F /* UIEAppDelegate.m in Sources */,
 				F0D64D0C1958093A0033222F /* UIEViewStore.m in Sources */,
@@ -383,7 +393,7 @@
 				F015AF23195A7725004CDFCB /* UIEPauseScreenViewController.m in Sources */,
 				F0D64D1519580D460033222F /* UIEPickerViewController.m in Sources */,
 				F0D64CFF1957FE3C0033222F /* UIEMainTableViewController.m in Sources */,
-				F0708508195A851700508473 /* UIEWebViewController.m in Sources */,
+				F0176937195A9B18009456B9 /* UIEWebViewController.m in Sources */,
 				F0D64D03195801790033222F /* UIEButtonViewController.m in Sources */,
 				F0F85C6D1958FE2800890AE5 /* UIESegmentViewController.m in Sources */,
 				F015AF1E195A76E2004CDFCB /* UIEGameScreenViewController.m in Sources */,
