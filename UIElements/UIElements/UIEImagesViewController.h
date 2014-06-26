@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIEImagesViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *enlargeButton;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end

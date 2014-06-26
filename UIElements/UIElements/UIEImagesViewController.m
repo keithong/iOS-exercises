@@ -13,6 +13,11 @@
 @end
 
 @implementation UIEImagesViewController
+- (IBAction)enlargeButtonAction:(id)sender {
+    
+    [self.thumbView setFrame:CGRectMake(66, 237, 189, 155)];
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
