@@ -10,6 +10,8 @@
 		F02E643F195AC25A00F911ED /* MVCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02E643E195AC25A00F911ED /* MVCMainViewController.m */; };
 		F02E6442195AC92500F911ED /* MVCLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02E6441195AC92500F911ED /* MVCLevelViewController.m */; };
 		F02E6444195ACB2300F911ED /* Exercise-Tool.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02E6443195ACB2300F911ED /* Exercise-Tool.plist */; };
+		F0673495195C0E420055C7A7 /* MVCLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0673494195C0E420055C7A7 /* MVCLevelCell.m */; };
+		F0673497195C0E510055C7A7 /* MVCLevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0673496195C0E510055C7A7 /* MVCLevelCell.xib */; };
 		F0A98AC4195AC08700FFE47A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A98AC3195AC08700FFE47A /* Foundation.framework */; };
 		F0A98AC6195AC08700FFE47A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A98AC5195AC08700FFE47A /* CoreGraphics.framework */; };
 		F0A98AC8195AC08700FFE47A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A98AC7195AC08700FFE47A /* UIKit.framework */; };
@@ -22,6 +24,9 @@
 		F0A98ADF195AC08700FFE47A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A98AC7195AC08700FFE47A /* UIKit.framework */; };
 		F0A98AE7195AC08700FFE47A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0A98AE5195AC08700FFE47A /* InfoPlist.strings */; };
 		F0A98AE9195AC08700FFE47A /* ModelViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A98AE8195AC08700FFE47A /* ModelViewControllerTests.m */; };
+		F0B06F41195BF78000D8FA6B /* alphabet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0B06F3E195BF78000D8FA6B /* alphabet.jpg */; };
+		F0B06F42195BF78000D8FA6B /* color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0B06F3F195BF78000D8FA6B /* color.jpg */; };
+		F0B06F43195BF78000D8FA6B /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = F0B06F40195BF78000D8FA6B /* food.png */; };
 		F0F2BCDB195B9C77004D7031 /* MVCItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2BCDA195B9C77004D7031 /* MVCItemModel.m */; };
 		F0F2BCDF195BC5C9004D7031 /* MVCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2BCDD195BC5C9004D7031 /* MVCDetailViewController.m */; };
 		F0F2BCE0195BC5C9004D7031 /* MVCDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F2BCDE195BC5C9004D7031 /* MVCDetailViewController.xib */; };
@@ -43,6 +48,9 @@
 		F02E6440195AC92500F911ED /* MVCLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVCLevelViewController.h; sourceTree = "<group>"; };
 		F02E6441195AC92500F911ED /* MVCLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVCLevelViewController.m; sourceTree = "<group>"; };
 		F02E6443195ACB2300F911ED /* Exercise-Tool.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Exercise-Tool.plist"; sourceTree = "<group>"; };
+		F0673493195C0E420055C7A7 /* MVCLevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MVCLevelCell.h; path = ../MVCLevelCell.h; sourceTree = "<group>"; };
+		F0673494195C0E420055C7A7 /* MVCLevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MVCLevelCell.m; path = ../MVCLevelCell.m; sourceTree = "<group>"; };
+		F0673496195C0E510055C7A7 /* MVCLevelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MVCLevelCell.xib; path = ../MVCLevelCell.xib; sourceTree = "<group>"; };
 		F0A98AC0195AC08700FFE47A /* ModelViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A98AC3195AC08700FFE47A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0A98AC5195AC08700FFE47A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,6 +67,9 @@
 		F0A98AE4195AC08700FFE47A /* ModelViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ModelViewControllerTests-Info.plist"; sourceTree = "<group>"; };
 		F0A98AE6195AC08700FFE47A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0A98AE8195AC08700FFE47A /* ModelViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelViewControllerTests.m; sourceTree = "<group>"; };
+		F0B06F3E195BF78000D8FA6B /* alphabet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alphabet.jpg; sourceTree = "<group>"; };
+		F0B06F3F195BF78000D8FA6B /* color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color.jpg; sourceTree = "<group>"; };
+		F0B06F40195BF78000D8FA6B /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		F0F2BCD9195B9C77004D7031 /* MVCItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVCItemModel.h; sourceTree = "<group>"; };
 		F0F2BCDA195B9C77004D7031 /* MVCItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVCItemModel.m; sourceTree = "<group>"; };
 		F0F2BCDC195BC5C9004D7031 /* MVCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVCDetailViewController.h; sourceTree = "<group>"; };
@@ -123,7 +134,10 @@
 		F0A98AC9195AC08700FFE47A /* ModelViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F0B06F3E195BF78000D8FA6B /* alphabet.jpg */,
+				F0B06F3F195BF78000D8FA6B /* color.jpg */,
 				F02E6443195ACB2300F911ED /* Exercise-Tool.plist */,
+				F0B06F40195BF78000D8FA6B /* food.png */,
 				F0A98AD5195AC08700FFE47A /* Images.xcassets */,
 				F0A98AD2195AC08700FFE47A /* MVCAppDelegate.h */,
 				F0A98AD3195AC08700FFE47A /* MVCAppDelegate.m */,
@@ -132,6 +146,9 @@
 				F0F2BCDE195BC5C9004D7031 /* MVCDetailViewController.xib */,
 				F0F2BCD9195B9C77004D7031 /* MVCItemModel.h */,
 				F0F2BCDA195B9C77004D7031 /* MVCItemModel.m */,
+				F0673493195C0E420055C7A7 /* MVCLevelCell.h */,
+				F0673494195C0E420055C7A7 /* MVCLevelCell.m */,
+				F0673496195C0E510055C7A7 /* MVCLevelCell.xib */,
 				F02E6440195AC92500F911ED /* MVCLevelViewController.h */,
 				F02E6441195AC92500F911ED /* MVCLevelViewController.m */,
 				F02E643D195AC25A00F911ED /* MVCMainViewController.h */,
@@ -246,10 +263,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B06F41195BF78000D8FA6B /* alphabet.jpg in Resources */,
 				F0F2BCE0195BC5C9004D7031 /* MVCDetailViewController.xib in Resources */,
 				F02E6444195ACB2300F911ED /* Exercise-Tool.plist in Resources */,
+				F0B06F42195BF78000D8FA6B /* color.jpg in Resources */,
+				F0B06F43195BF78000D8FA6B /* food.png in Resources */,
 				F0A98ACE195AC08700FFE47A /* InfoPlist.strings in Resources */,
 				F0A98AD6195AC08700FFE47A /* Images.xcassets in Resources */,
+				F0673497195C0E510055C7A7 /* MVCLevelCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +293,7 @@
 				F0F2BCDB195B9C77004D7031 /* MVCItemModel.m in Sources */,
 				F02E6442195AC92500F911ED /* MVCLevelViewController.m in Sources */,
 				F0A98AD0195AC08700FFE47A /* main.m in Sources */,
+				F0673495195C0E420055C7A7 /* MVCLevelCell.m in Sources */,
 				F0A98AD4195AC08700FFE47A /* MVCAppDelegate.m in Sources */,
 				F02E643F195AC25A00F911ED /* MVCMainViewController.m in Sources */,
 			);

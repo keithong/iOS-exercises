@@ -14,4 +14,5 @@
 @property (strong, nonatomic) NSMutableDictionary *letterDictionary;
 @property (strong, nonatomic) NSMutableDictionary *colorDictionary;
 @property (strong, nonatomic) NSMutableDictionary *foodDictionary;
+@property (strong, nonatomic) NSMutableArray *thumbs;
 @end

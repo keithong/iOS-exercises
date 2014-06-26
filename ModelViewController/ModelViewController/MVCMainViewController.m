@@ -10,13 +10,14 @@
 #import "MVCLevelViewController.h"
 
 @implementation MVCMainViewController
-@synthesize mainArray, letterDictionary, colorDictionary, foodDictionary;
+@synthesize mainArray, letterDictionary, colorDictionary, foodDictionary, thumbs;
 -(instancetype)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
     self.title = @"Main View Controller";
     if(self){
         mainArray = [[NSMutableArray alloc]init];
+        thumbs = [[NSMutableArray alloc]init];
         
         /*
         letterDictionary = [NSMutableDictionary dictionaryWithObject:@"Letter" forKey:@"Title"];
@@ -30,6 +31,10 @@
         [mainArray addObject:[NSDictionary dictionaryWithObject:@"Letter" forKey:@"Title"]];
         [mainArray addObject:[NSDictionary dictionaryWithObject:@"Color" forKey:@"Title"]];
         [mainArray addObject:[NSDictionary dictionaryWithObject:@"Food" forKey:@"Title"]];
+        
+        [thumbs addObject:@"alphabet.jpg"];
+        [thumbs addObject:@"color.jpg"];
+        [thumbs addObject:@"food.png"];
 
     }
     return self;
@@ -56,6 +61,8 @@ numberOfRowsInSection:(NSInteger)section
     
     NSDictionary *cellIdentifier = [mainArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[cellIdentifier objectForKey:@"Title"]];
+    cell.imageView.image = [UIImage imageNamed:[thumbs objectAtIndex:indexPath.row]];
+    
     return cell;
 }
 
@@ -67,8 +74,6 @@ numberOfRowsInSection:(NSInteger)section
     // Set the category of the items in the level view
     // depending on the selected title in the main view
     lvc.category = [NSString stringWithFormat:@"%@", [titleIdentifier objectForKey:@"Title"]];
-    
-    
     [self.navigationController pushViewController:lvc animated:YES];
 }
 

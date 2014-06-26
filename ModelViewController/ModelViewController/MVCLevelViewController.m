@@ -10,6 +10,8 @@
 #import "MVCMainViewController.h"
 #import "MVCItemModel.h"
 #import "MVCDetailViewController.h"
+#import "MVCLevelCell.h"
+
 @implementation MVCLevelViewController
 @synthesize filePath, plistArray, filteredArray,storageArray, plistDictionary;
 -(instancetype)init
@@ -24,30 +26,37 @@
 {
     return [self init];
 }
-
+-(id)initWithItemModel:(MVCItemModel *)itemModel
+{
+    self = [super init];
+    self.itemTitleForLabel = itemModel.itemTitle;
+    self.itemDescriptionForLabel = itemModel.itemDescription;
+    return self;
+}
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    // Since we have a filtered array, we can now 
+    // Since we have a filtered array, we can now
     return [filteredArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                             forIndexPath:indexPath];
-    
+   
+    MVCLevelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MVCLevelCell" forIndexPath:indexPath];
     NSDictionary *cellIdentifier = [filteredArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [cellIdentifier objectForKey: @"itemTitle"]];
+    MVCItemModel *item = [[MVCItemModel alloc]initWithDictionary:cellIdentifier];
 
+    MVCLevelViewController *lvc = [[MVCLevelViewController alloc]initWithItemModel:item];
+   
+    cell.levelTitleLabel.text = lvc.itemTitleForLabel;
+    cell.levelDescriptionLabel.text = lvc.itemDescriptionForLabel;
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
-
     NSDictionary *detailIdentifier = [filteredArray objectAtIndex:indexPath.row];
     NSLog(@"detailIdentifier %@", detailIdentifier);
     MVCItemModel *item = [[MVCItemModel alloc]initWithDictionary:detailIdentifier];
@@ -60,6 +69,11 @@ numberOfRowsInSection:(NSInteger)section
 {
     [super viewDidLoad];
     self.title = self.category;
+    
+    UINib *nib = [UINib nibWithNibName:@"MVCLevelCell" bundle:nil];
+    
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"MVCLevelCell"];
+    
     filePath = [[NSBundle mainBundle] pathForResource:@"Exercise-Tool" ofType:@"plist"];
     
     if(filePath)
@@ -86,4 +100,3 @@ numberOfRowsInSection:(NSInteger)section
 }
 
 @end
-;

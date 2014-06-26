@@ -18,10 +18,6 @@
         self.itemTitle = [dict objectForKey: @"itemTitle"];
         self.itemDescription = [dict objectForKey: @"itemDescription"];
         self.itemCategory = [dict objectForKey: @"itemCategory"];
-        
-        NSLog (@"title form the model %@", self.itemTitle);
-        NSLog (@"desc form the model %@", self.itemDescription);
-        NSLog (@"cat form the model %@", self.itemCategory);
     }
     
     return self;
