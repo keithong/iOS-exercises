@@ -36,7 +36,7 @@
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    // Since we have a filtered array, we can now
+    // Since we have a filtered array, we can now count based on how many items are filtered.
     return [filteredArray count];
 }
 
