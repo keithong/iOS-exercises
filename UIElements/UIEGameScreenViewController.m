@@ -8,24 +8,14 @@
 
 #import "UIEGameScreenViewController.h"
 
-@interface UIEGameScreenViewController ()
-
-@end
-
 @implementation UIEGameScreenViewController
 - (IBAction)pauseButtonAction:(id)sender {
-    UIEPauseScreenViewController *pauseGame = [[UIEPauseScreenViewController alloc] initWithNibName:@"UIEPauseScreenViewController" bundle:[NSBundle mainBundle]];
+    UIEPauseScreenViewController *pauseGame = [[UIEPauseScreenViewController alloc]
+                                               initWithNibName:@"UIEPauseScreenViewController"
+                                               bundle:[NSBundle mainBundle]];
     [pauseGame setDelegate:self];
+    
     [self.navigationController pushViewController:pauseGame animated:NO];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -37,11 +27,6 @@
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)pauseGameDelegateMethod
 {
@@ -53,10 +38,9 @@
                           otherButtonTitles:nil];
     
     [notify show];
-
-    NSLog(@"Successfully called the delegate method!");
     
-    
+    // Log to test and debug
+    // NSLog(@"Successfully called the delegate method!");
 }
 
 @end

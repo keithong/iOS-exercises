@@ -8,9 +8,6 @@
 
 #import "UIEButtonViewController.h"
 
-@interface UIEButtonViewController ()
-@end
-
 @implementation UIEButtonViewController
 - (IBAction)greetBtnClick:(id)sender {
     self.labelOutput.text = @"Hello, World!";
@@ -28,13 +25,12 @@
     self.labelOutput.textColor = [UIColor blackColor];
 }
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _labelOutput.text = @"";
+        self.labelOutput.text = @"";
     }
     return self;
 }
@@ -46,12 +42,6 @@
     
     // Set the navbar title to the selected item's class
     self.title = [NSString stringWithFormat:@"%@", self.class];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

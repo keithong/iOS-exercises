@@ -8,9 +8,6 @@
 
 #import "UIEControlViewController.h"
 
-@interface UIEControlViewController ()
-@end
-
 @implementation UIEControlViewController
 - (IBAction)sliderValueChanged:(UISlider *)sender {
     
@@ -19,16 +16,6 @@
         return;
     }
     self.volumeLabel.text = [NSString stringWithFormat:@"%i", (int)sender.value];
-    
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -42,12 +29,6 @@
     [self.lightSwitch addTarget:self action:@selector(stateChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)stateChanged:(UISwitch *)switchState
 {
     if ([switchState isOn]) {
@@ -57,7 +38,5 @@
     }
     self.outputLabel.text = @"The light is off";
     self.view.backgroundColor = [UIColor grayColor];
-    
 }
-
 @end

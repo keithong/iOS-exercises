@@ -8,25 +8,11 @@
 
 #import "UIEImagesViewController.h"
 
-@interface UIEImagesViewController ()
-
-@end
-
 @implementation UIEImagesViewController
 - (IBAction)enlargeButtonAction:(id)sender {
-    // Set an invisible button above the thumbnail to
-    // enlarge the image when tapped
+    // Set an invisible button above the thumbnail
+    // to enlarge the image when tapped
     [self.thumbView setFrame:CGRectMake(66, 237, 189, 155)];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -41,11 +27,5 @@
     [self.imageView setImage:image];
     [self.thumbView setImage:image];
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 @end

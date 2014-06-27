@@ -11,7 +11,4 @@
 
 @interface UIEMapViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
-@property (nonatomic) float latitude;
-@property (nonatomic) float longtitude;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 @end

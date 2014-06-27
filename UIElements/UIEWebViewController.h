@@ -10,5 +10,4 @@
 
 @interface UIEWebViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *myWebView;
-
 @end

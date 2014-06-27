@@ -11,5 +11,4 @@
 
 @interface UIEGameScreenViewController : UIViewController <PauseScreenViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
-
 @end

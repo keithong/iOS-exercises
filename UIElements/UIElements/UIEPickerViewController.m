@@ -9,20 +9,10 @@
 #import "UIEPickerViewController.h"
 
 @interface UIEPickerViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
-
-
+@property (retain, nonatomic)NSMutableArray *charList;
 @end
-@implementation UIEPickerViewController
-@synthesize charList;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation UIEPickerViewController
 
 - (void)viewDidLoad
 {
@@ -36,7 +26,7 @@
     self.characterPicker.delegate = self;
     
     // Create an array that will soon be pushed inside the picker
-    charList = [[NSMutableArray alloc]
+    self.charList = [[NSMutableArray alloc]
                 initWithObjects:
                 @"Rick Grimes",
                 @"Daryl Dixon",
@@ -45,12 +35,6 @@
                 @"The Governor",
                 @"Shane Walsh",
                 @"Herschel Greene", nil];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -62,7 +46,7 @@
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     // Number of rows in the picker. Use the array's length to determine it.
-    return [charList count];
+    return [self.charList count];
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -74,7 +58,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     // When you select an item in the picker, the label in the screen will be updated.
-    self.characterLabel.text = [NSString stringWithFormat:@"%@", [charList objectAtIndex:row]];
+    self.characterLabel.text = [NSString stringWithFormat:@"%@", [self.charList objectAtIndex:row]];
 }
 
 @end

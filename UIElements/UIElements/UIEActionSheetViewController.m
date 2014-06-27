@@ -9,7 +9,6 @@
 #import "UIEActionSheetViewController.h"
 
 @interface UIEActionSheetViewController () <UIActionSheetDelegate>
-
 @end
 
 @implementation UIEActionSheetViewController
@@ -25,15 +24,6 @@
     [actionSheet showInView:self.view];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,12 +32,6 @@
     // Set the navbar title to the selected item's class
     self.title = [NSString stringWithFormat:@"%@", self.class];
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

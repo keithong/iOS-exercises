@@ -104,7 +104,7 @@
 		F0D64CF11957F9CD0033222F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0D64CF31957F9CD0033222F /* UIElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIElementsTests.m; sourceTree = "<group>"; };
 		F0D64CFD1957FE3C0033222F /* UIEMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEMainTableViewController.h; sourceTree = "<group>"; };
-		F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEMainTableViewController.m; sourceTree = "<group>"; };
+		F0D64CFE1957FE3C0033222F /* UIEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UIEMainTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F0D64D00195801790033222F /* UIEButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEButtonViewController.h; sourceTree = "<group>"; };
 		F0D64D01195801790033222F /* UIEButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEButtonViewController.m; sourceTree = "<group>"; };
 		F0D64D02195801790033222F /* UIEButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEButtonViewController.xib; sourceTree = "<group>"; };

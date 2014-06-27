@@ -9,21 +9,12 @@
 #import "UIEMapViewController.h"
 
 @interface UIEMapViewController ()
-
+@property (nonatomic) float latitude;
+@property (nonatomic) float longtitude;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation UIEMapViewController
-@synthesize latitude;
-@synthesize longtitude;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -50,12 +41,6 @@
     [errorLocation show];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *lastLocation = [locations lastObject];
@@ -75,8 +60,7 @@
     newRegion.span.longitudeDelta = .18;
     
     [self.myMapView setRegion:newRegion animated:YES];
-    
-    
+
 }
 
 @end

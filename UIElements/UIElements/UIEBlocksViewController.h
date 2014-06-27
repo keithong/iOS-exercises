@@ -10,5 +10,4 @@
 
 @interface UIEBlocksViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *blockWebView;
-
 @end

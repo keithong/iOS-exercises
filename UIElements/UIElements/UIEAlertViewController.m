@@ -20,30 +20,19 @@
                           delegate:self
                           cancelButtonTitle:@"NO"
                           otherButtonTitles:@"Yes",nil];
-    
     [clear show];
     
 }
 
 - (IBAction)alertPop:(id)sender {
-    
+
     UIAlertView *greet = [[UIAlertView alloc]
                             initWithTitle:@"Greet!"
                             message:@"Hello, World!"
                             delegate:nil
                             cancelButtonTitle:@"OK"
                             otherButtonTitles:nil];
-    
     [greet show];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -55,16 +44,12 @@
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
+    // Clear the label if the user tapped Yes.
     if([title isEqualToString:@"Yes"])
     {
         self.sampleLabel.text = @"";

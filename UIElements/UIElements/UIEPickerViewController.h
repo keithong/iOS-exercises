@@ -11,6 +11,4 @@
 @interface UIEPickerViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *characterLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *characterPicker;
-
-@property (nonatomic, retain)NSMutableArray *charList;
 @end

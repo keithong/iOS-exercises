@@ -23,51 +23,52 @@
 #import "UIECoreLocationViewController.h"
 #import "UIEMapViewController.h"
 
+@interface UIEMainTableViewController()
+@property (retain, nonatomic)NSMutableArray *array;
+@end
+
 @implementation UIEMainTableViewController
-
-@synthesize array;
-
 -(instancetype)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
     self.title = @"UIElements";
     
     if (self) {
-        array = [[NSMutableArray alloc] init];
+        self.array = [[NSMutableArray alloc] init];
         
         // Create an object for every view controller
-        UIEButtonViewController *btnVC = [[UIEButtonViewController alloc]init];
-        UIEControlViewController *ctrlVC = [[UIEControlViewController alloc] init];
-        UIETextViewController *txtVC = [[UIETextViewController alloc] init];
-        UIEPickerViewController *pckrVC = [[UIEPickerViewController alloc] init];
-        UIEImagesViewController *imgsVC = [[UIEImagesViewController alloc] init];
-        UIESegmentViewController *sgmntVC = [[UIESegmentViewController alloc] init];
-        UIEToolbarViewController *tlbrVC =[[UIEToolbarViewController alloc] init];
-        UIETabBarViewController *tabVC = [[UIETabBarViewController alloc] init];
-        UIEAlertViewController *alrtVC = [[UIEAlertViewController alloc] init];
-        UIEActionSheetViewController *actnVC = [[UIEActionSheetViewController alloc] init];
-        UIEGameScreenViewController *gmScrnVC = [[UIEGameScreenViewController alloc] init];
-        UIEWebViewController *wbVC = [[UIEWebViewController alloc] init];
-        UIEBlocksViewController *blcksVC = [[UIEBlocksViewController alloc]init];
-        UIECoreLocationViewController *crLctnVC = [[UIECoreLocationViewController alloc]init];
-        UIEMapViewController *mpVC = [[UIEMapViewController alloc]init];
+        UIEButtonViewController *btnVC = [UIEButtonViewController alloc];
+        UIEControlViewController *ctrlVC = [UIEControlViewController alloc];
+        UIETextViewController *txtVC = [UIETextViewController alloc];
+        UIEPickerViewController *pckrVC = [UIEPickerViewController alloc];
+        UIEImagesViewController *imgsVC = [UIEImagesViewController alloc];
+        UIESegmentViewController *sgmntVC = [UIESegmentViewController alloc];
+        UIEToolbarViewController *tlbrVC =[UIEToolbarViewController alloc];
+        UIETabBarViewController *tabVC = [UIETabBarViewController alloc];
+        UIEAlertViewController *alrtVC = [UIEAlertViewController alloc];
+        UIEActionSheetViewController *actnVC = [UIEActionSheetViewController alloc];
+        UIEGameScreenViewController *gmScrnVC = [UIEGameScreenViewController alloc];
+        UIEWebViewController *wbVC = [UIEWebViewController alloc];
+        UIEBlocksViewController *blcksVC = [UIEBlocksViewController alloc];
+        UIECoreLocationViewController *crLctnVC = [UIECoreLocationViewController alloc];
+        UIEMapViewController *mpVC = [UIEMapViewController alloc];
         
         // Push them inside the array as a dictionary with "title" as key and their class name as value
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ctrlVC class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([txtVC class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([pckrVC class]), @"title", nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([imgsVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([sgmntVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tlbrVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tabVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([alrtVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([actnVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([gmScrnVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([wbVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([crLctnVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ctrlVC class]), @"title", nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([txtVC class]), @"title", nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([pckrVC class]), @"title", nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([imgsVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([sgmntVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tlbrVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tabVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([alrtVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([actnVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([gmScrnVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([wbVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([crLctnVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];
     }
     return self;
 }
@@ -80,14 +81,14 @@
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    return [array count];
+    return [self.array count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
+    NSDictionary *dictionary = [self.array objectAtIndex:indexPath.row];
     
     // Use the class' title as cell label
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]];
@@ -104,8 +105,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
+    NSDictionary *dictionary = [self.array objectAtIndex:indexPath.row];
     
     // Do not use UIViewController class because it throws an exception
     // Get the class of the selected cell and use that to load your next view controller

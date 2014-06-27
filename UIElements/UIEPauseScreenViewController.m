@@ -8,10 +8,6 @@
 
 #import "UIEPauseScreenViewController.h"
 
-@interface UIEPauseScreenViewController ()
-
-@end
-
 @implementation UIEPauseScreenViewController
 - (IBAction)pauseButtonMethod:(id)sender {
     if([self.delegate respondsToSelector:@selector(pauseGameDelegateMethod)])
@@ -21,7 +17,6 @@
     }
     else
         NSLog(@"Does not conform to the Delegate Protocol");
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,11 +37,4 @@
     // Set the navbar title to the selected item's class
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 @end
