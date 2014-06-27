@@ -29,6 +29,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
+    
+    // Check if the location service is enabled
     if ([CLLocationManager locationServicesEnabled]) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
@@ -60,7 +65,7 @@
 
 -(void)viewLocation
 {
-
+    
     MKCoordinateRegion newRegion;
     
     newRegion.center.latitude = self.latitude;
@@ -69,10 +74,8 @@
     newRegion.span.latitudeDelta = .18;
     newRegion.span.longitudeDelta = .18;
     
-
-    
     [self.myMapView setRegion:newRegion animated:YES];
-
+    
     
 }
 

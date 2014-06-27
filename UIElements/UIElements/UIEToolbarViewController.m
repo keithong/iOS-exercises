@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
+
     [self createToolBar];
 }
 
@@ -51,11 +55,13 @@
                                     style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(firstButtonTapped:)];
+    
     UIBarButtonItem *secondButton = [[UIBarButtonItem alloc]
                                      initWithTitle:@"Second"
                                      style:UIBarButtonItemStylePlain
                                      target:self
                                      action:@selector(secondButtonTapped:)];
+    
     UIBarButtonItem *thirdButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"Third"
                                     style:UIBarButtonItemStylePlain

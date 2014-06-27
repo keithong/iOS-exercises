@@ -31,10 +31,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(closeKeyboard)];
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
     
+    // When the user taps anywhere in the screen, "tap" will call the method closeKeyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
     [self.view addGestureRecognizer:tap];
     
 }

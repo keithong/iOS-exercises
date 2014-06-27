@@ -28,6 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
+    
     // Check if the location service in the phone is enabled
     if ([CLLocationManager locationServicesEnabled]) {
         self.locationManager = [[CLLocationManager alloc] init];
@@ -35,14 +38,14 @@
         [self.locationManager startUpdatingLocation];
         return;
     }
-        UIAlertView *errorLocation = [[UIAlertView alloc]
-                              initWithTitle:@"Error!"
-                              message:@"Location Services are not enabled."
-                              delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        
-        [errorLocation show];
+    UIAlertView *errorLocation = [[UIAlertView alloc]
+                                  initWithTitle:@"Error!"
+                                  message:@"Location Services are not enabled."
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+    
+    [errorLocation show];
 }
 
 - (void)didReceiveMemoryWarning

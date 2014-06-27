@@ -27,6 +27,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     // Override point for customization after application launch.
+    
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
+    
     [self createTabBar];
 
 }

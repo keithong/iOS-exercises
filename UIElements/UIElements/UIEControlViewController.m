@@ -9,7 +9,6 @@
 #import "UIEControlViewController.h"
 
 @interface UIEControlViewController ()
-
 @end
 
 @implementation UIEControlViewController
@@ -36,6 +35,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
+    
     [self.lightSwitch addTarget:self action:@selector(stateChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -50,10 +53,11 @@
     if ([switchState isOn]) {
         self.outputLabel.text = @"The light is on";
         self.view.backgroundColor = [UIColor whiteColor];
-    } else {
-        self.outputLabel.text = @"The light is off";
-        self.view.backgroundColor = [UIColor grayColor];
+        return;
     }
+    self.outputLabel.text = @"The light is off";
+    self.view.backgroundColor = [UIColor grayColor];
+    
 }
 
 @end

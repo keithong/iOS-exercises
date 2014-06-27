@@ -9,8 +9,6 @@
 #import "UIEAlertViewController.h"
 
 @interface UIEAlertViewController () <UIAlertViewDelegate>
-
-
 @end
 
 @implementation UIEAlertViewController
@@ -26,6 +24,7 @@
     [clear show];
     
 }
+
 - (IBAction)alertPop:(id)sender {
     
     UIAlertView *greet = [[UIAlertView alloc]
@@ -51,6 +50,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
 }
 
 - (void)didReceiveMemoryWarning

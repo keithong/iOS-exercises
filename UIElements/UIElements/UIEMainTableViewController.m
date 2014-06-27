@@ -36,7 +36,6 @@
         array = [[NSMutableArray alloc] init];
         
         // Create an object for every view controller
-//        UIEButtonViewController *btnVC = [[UIEButtonViewController alloc] initWithNibName:@"UIEButtonViewController" bundle:nil];
         UIEButtonViewController *btnVC = [[UIEButtonViewController alloc]init];
         UIEControlViewController *ctrlVC = [[UIEControlViewController alloc] init];
         UIETextViewController *txtVC = [[UIETextViewController alloc] init];
@@ -52,8 +51,8 @@
         UIEBlocksViewController *blcksVC = [[UIEBlocksViewController alloc]init];
         UIECoreLocationViewController *crLctnVC = [[UIECoreLocationViewController alloc]init];
         UIEMapViewController *mpVC = [[UIEMapViewController alloc]init];
-//        [array addObject:[NSDictionary dictionaryWithObject:btnVC forKey:@"title"]];
         
+        // Push them inside the array as a dictionary with "title" as key and their class name as value
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ctrlVC class]), @"title", nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([txtVC class]), @"title", nil]];
@@ -68,7 +67,8 @@
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([wbVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
         [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([crLctnVC class]), @"title",nil]];
-        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];}
+        [array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];
+    }
     return self;
 }
 
@@ -86,14 +86,11 @@ numberOfRowsInSection:(NSInteger)section
 -(UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                             forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
-//    NSLog(@"dictionary: %@", [dictionary objectForKey:@"title"]);
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]];
     
+    // Use the class' title as cell label
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]];
     
     return cell;
 }
@@ -102,23 +99,23 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
 }
 
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected : %i", indexPath.row);
+
     NSDictionary *dictionary = [array objectAtIndex:indexPath.row];
     
     // Do not use UIViewController class because it throws an exception
-    // Get the class of the selected cell and use that
+    // Get the class of the selected cell and use that to load your next view controller
     Class classPicker = NSClassFromString([NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]);
     
     id viewController  = [[classPicker alloc]
-                           initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]
-                           bundle:[NSBundle mainBundle]];
-    NSLog(@"%@", [dictionary objectForKey:@"title"]);
+                          initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]] bundle:[NSBundle mainBundle]];
+    
+    // Log to test and debug
+    // NSLog(@"Selected cell: %@", [dictionary objectForKey:@"title"]);
     
     [self.navigationController pushViewController:viewController animated:YES];
 }

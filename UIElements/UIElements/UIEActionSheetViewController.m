@@ -37,8 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Action Sheet";
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the navbar title to the selected item's class
+    self.title = [NSString stringWithFormat:@"%@", self.class];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +52,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // When an item inside the action sheet is tapped, that item will be displayed in the label.
     self.outputLabel.text = [NSString stringWithFormat:@"%@",[actionSheet buttonTitleAtIndex:buttonIndex]];
 }
 
