@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F05EB871195D4C2A004B53C7 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F05EB870195D4C2A004B53C7 /* GameScene.m */; };
 		F085EABB195D3B260067B13E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F085EABA195D3B260067B13E /* Foundation.framework */; };
 		F085EABD195D3B260067B13E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F085EABC195D3B260067B13E /* CoreGraphics.framework */; };
 		F085EABF195D3B260067B13E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F085EABE195D3B260067B13E /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F05EB86F195D4C2A004B53C7 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		F05EB870195D4C2A004B53C7 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		F085EAB7195D3B260067B13E /* Break.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Break.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F085EABA195D3B260067B13E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F085EABC195D3B260067B13E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				F085EACE195D3B260067B13E /* Main.storyboard */,
 				F085EAD1195D3B260067B13E /* ViewController.h */,
 				F085EAD2195D3B260067B13E /* ViewController.m */,
+				F05EB86F195D4C2A004B53C7 /* GameScene.h */,
+				F05EB870195D4C2A004B53C7 /* GameScene.m */,
 				F085EAD4195D3B260067B13E /* MyScene.h */,
 				F085EAD5195D3B260067B13E /* MyScene.m */,
 				F085EAD7195D3B260067B13E /* Spaceship.png */,
@@ -264,6 +269,7 @@
 			files = (
 				F085EAD6195D3B260067B13E /* MyScene.m in Sources */,
 				F085EAD3195D3B260067B13E /* ViewController.m in Sources */,
+				F05EB871195D4C2A004B53C7 /* GameScene.m in Sources */,
 				F085EACD195D3B260067B13E /* AppDelegate.m in Sources */,
 				F085EAC9195D3B260067B13E /* main.m in Sources */,
 			);
@@ -472,6 +478,7 @@
 				F085EAF2195D3B260067B13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F085EAF3195D3B260067B13E /* Build configuration list for PBXNativeTarget "BreakTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +487,7 @@
 				F085EAF5195D3B260067B13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

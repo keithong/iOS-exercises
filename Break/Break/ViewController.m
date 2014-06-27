@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
+#import "GameScene.h"
 
 @implementation ViewController
 
@@ -22,10 +23,12 @@
     
     // Create and configure the scene.
     SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SKScene *gameScene = [GameScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+//    [skView presentScene:scene];
+    [skView presentScene:gameScene];
 }
 
 - (BOOL)shouldAutorotate
