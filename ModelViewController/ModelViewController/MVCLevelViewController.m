@@ -26,29 +26,38 @@
 {
     return [self init];
 }
+
 -(id)initWithItemModel:(MVCItemModel *)itemModel
 {
+    // We want to access the model in the level view
+    // to add the description with the title in the cell
+    
     self = [super init];
     self.itemTitleForLabel = itemModel.itemTitle;
     self.itemDescriptionForLabel = itemModel.itemDescription;
     return self;
+    
 }
--(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Since we have a filtered array, we can now count based on how many items are filtered.
+    // Since we have a filtered array, we can now count the rows
+    // based on how many items are returned.
     return [filteredArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
     MVCLevelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MVCLevelCell" forIndexPath:indexPath];
+    
     NSDictionary *cellIdentifier = [filteredArray objectAtIndex:indexPath.row];
+    
     MVCItemModel *item = [[MVCItemModel alloc]initWithDictionary:cellIdentifier];
-
+    
+    // Use level view controller's initWithItemModel to
+    // get data from the model
     MVCLevelViewController *lvc = [[MVCLevelViewController alloc]initWithItemModel:item];
-   
+    
     cell.levelTitleLabel.text = lvc.itemTitleForLabel;
     cell.levelDescriptionLabel.text = lvc.itemDescriptionForLabel;
     
@@ -58,7 +67,10 @@ numberOfRowsInSection:(NSInteger)section
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *detailIdentifier = [filteredArray objectAtIndex:indexPath.row];
-    NSLog(@"detailIdentifier %@", detailIdentifier);
+    
+    // Log to test and debug
+    // NSLog(@"detailIdentifier %@", detailIdentifier);
+    
     MVCItemModel *item = [[MVCItemModel alloc]initWithDictionary:detailIdentifier];
     MVCDetailViewController *dvc = [[MVCDetailViewController alloc]initWithItemModel:item];
     [self.navigationController pushViewController:dvc animated:YES];
@@ -78,24 +90,22 @@ numberOfRowsInSection:(NSInteger)section
     
     if(filePath)
     {
-        NSLog(@"plist loaded");
+        // Log to test and debug
+        // NSLog(@"plist Loaded");
         
         plistArray = [NSArray arrayWithContentsOfFile:filePath];
-        
-        NSLog (@"Selected Category: %@",self.category);
         
         // Use this to view every item on a given category
         filteredArray = [plistArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(itemCategory == %@)", self.category]];
         
-        
-        NSLog(@"filteredArray: %@", filteredArray);
-        
+        // NSLog (@"Selected Category: %@",self.category);
+        // NSLog(@"filteredArray: %@", filteredArray);
         
         [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
         return;
     }
-    
-    NSLog(@"failed to load plist");
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    NSLog(@"Failed to load plist");
     
 }
 

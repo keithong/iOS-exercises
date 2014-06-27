@@ -16,12 +16,10 @@
 
 -(id)initWithItemModel:(MVCItemModel *)itemModel
 {
-
     self.itemTitleForLabel = itemModel.itemTitle;
     self.itemCategoryForLabel = itemModel.itemCategory;
     self.itemDescriptionForLabel = itemModel.itemDescription;
     return self;
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

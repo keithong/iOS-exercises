@@ -12,6 +12,4 @@
 @interface MVCLevelCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *levelDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelTitleLabel;
-
-
 @end

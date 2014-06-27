@@ -16,17 +16,9 @@
     self = [super initWithStyle:UITableViewStylePlain];
     self.title = @"Main View Controller";
     if(self){
+    
         mainArray = [[NSMutableArray alloc]init];
         thumbs = [[NSMutableArray alloc]init];
-        
-        /*
-        letterDictionary = [NSMutableDictionary dictionaryWithObject:@"Letter" forKey:@"Title"];
-        colorDictionary = [NSMutableDictionary dictionaryWithObject:@"Color" forKey:@"Title"];
-        foodDictionary = [NSMutableDictionary dictionaryWithObject:@"Food" forKey:@"Title"];
-        [mainArray addObject:letterDictionary];
-        [mainArray addObject:colorDictionary];
-        [mainArray addObject:foodDictionary];
-         */        
 
         [mainArray addObject:[NSDictionary dictionaryWithObject:@"Letter" forKey:@"Title"]];
         [mainArray addObject:[NSDictionary dictionaryWithObject:@"Color" forKey:@"Title"]];
@@ -57,9 +49,8 @@ numberOfRowsInSection:(NSInteger)section
                              dequeueReusableCellWithIdentifier:@"UITableViewCell"
                              forIndexPath:indexPath];
     
-    
-    
     NSDictionary *cellIdentifier = [mainArray objectAtIndex:indexPath.row];
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[cellIdentifier objectForKey:@"Title"]];
     cell.imageView.image = [UIImage imageNamed:[thumbs objectAtIndex:indexPath.row]];
     

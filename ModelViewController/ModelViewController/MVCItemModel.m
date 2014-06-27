@@ -19,8 +19,6 @@
         self.itemDescription = [dict objectForKey: @"itemDescription"];
         self.itemCategory = [dict objectForKey: @"itemCategory"];
     }
-    
     return self;
 }
-
 @end
