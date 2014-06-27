@@ -12,8 +12,17 @@
 #import "MVCDetailViewController.h"
 #import "MVCLevelCell.h"
 
+@interface MVCLevelViewController()
+@property (retain, nonatomic) NSString *filePath;
+@property (retain, nonatomic) NSMutableArray *plistArray;
+@property (retain, nonatomic) NSArray *filteredArray;
+@property (retain, nonatomic) NSDictionary *plistDictionary;
+@property (retain, nonatomic) NSString *itemTitleForLabel;
+@property (retain, nonatomic) NSString *itemDescriptionForLabel;
+-(id)initWithItemModel:(MVCItemModel *)itemModel;
+@end
+
 @implementation MVCLevelViewController
-@synthesize filePath, plistArray, filteredArray,storageArray, plistDictionary;
 -(instancetype)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
@@ -43,19 +52,19 @@
 {
     // Since we have a filtered array, we can now count the rows
     // based on how many items are returned.
-    return [filteredArray count];
+    return [self.filteredArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MVCLevelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MVCLevelCell" forIndexPath:indexPath];
     
-    NSDictionary *cellIdentifier = [filteredArray objectAtIndex:indexPath.row];
+    NSDictionary *cellIdentifier = [self.filteredArray objectAtIndex:indexPath.row];
     
     MVCItemModel *item = [[MVCItemModel alloc]initWithDictionary:cellIdentifier];
     
-    // Use level view controller's initWithItemModel to
-    // get data from the model
+    // Use level view controller's initWithItemModel
+    // to get data from the model
     MVCLevelViewController *lvc = [[MVCLevelViewController alloc]initWithItemModel:item];
     
     cell.levelTitleLabel.text = lvc.itemTitleForLabel;
@@ -66,7 +75,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *detailIdentifier = [filteredArray objectAtIndex:indexPath.row];
+    NSDictionary *detailIdentifier = [self.filteredArray objectAtIndex:indexPath.row];
     
     // Log to test and debug
     // NSLog(@"detailIdentifier %@", detailIdentifier);
@@ -86,17 +95,17 @@
     
     [self.tableView registerNib:nib forCellReuseIdentifier:@"MVCLevelCell"];
     
-    filePath = [[NSBundle mainBundle] pathForResource:@"Exercise-Tool" ofType:@"plist"];
+    self.filePath = [[NSBundle mainBundle] pathForResource:@"Exercise-Tool" ofType:@"plist"];
     
-    if(filePath)
+    if(self.filePath)
     {
         // Log to test and debug
         // NSLog(@"plist Loaded");
         
-        plistArray = [NSArray arrayWithContentsOfFile:filePath];
+        self.plistArray = [NSArray arrayWithContentsOfFile:self.filePath];
         
         // Use this to view every item on a given category
-        filteredArray = [plistArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(itemCategory == %@)", self.category]];
+        self.filteredArray = [self.plistArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(itemCategory == %@)", self.category]];
         
         // NSLog (@"Selected Category: %@",self.category);
         // NSLog(@"filteredArray: %@", filteredArray);

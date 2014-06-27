@@ -9,6 +9,9 @@
 #import "MVCDetailViewController.h"
 
 @interface MVCDetailViewController ()
+@property (retain, nonatomic) NSString *itemTitleForLabel;
+@property (retain, nonatomic) NSString *itemCategoryForLabel;
+@property (retain, nonatomic) NSString *itemDescriptionForLabel;
 
 @end
 
@@ -22,15 +25,6 @@
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,12 +33,6 @@
     self.titleLabel.text = self.itemTitleForLabel;
     self.descriptionLabel.text = self.itemDescriptionForLabel;
     self.categoryLabel.text = self.itemCategoryForLabel;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

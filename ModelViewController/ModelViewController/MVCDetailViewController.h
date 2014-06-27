@@ -13,8 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) NSString *itemTitleForLabel;
-@property (strong, nonatomic) NSString *itemCategoryForLabel;
-@property (strong, nonatomic) NSString *itemDescriptionForLabel;
+
 -(id)initWithItemModel:(MVCItemModel *)itemModel;
 @end

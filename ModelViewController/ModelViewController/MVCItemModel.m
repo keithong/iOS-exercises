@@ -7,7 +7,9 @@
 //
 
 #import "MVCItemModel.h"
+@interface MVCItemModel()
 
+@end
 @implementation MVCItemModel
 @synthesize itemTitle,itemDescription, itemCategory;
 
