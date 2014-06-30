@@ -20,6 +20,26 @@
 		F0176946195AB033009456B9 /* UIEMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0176944195AB033009456B9 /* UIEMapViewController.m */; };
 		F0176947195AB033009456B9 /* UIEMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0176945195AB033009456B9 /* UIEMapViewController.xib */; };
 		F0176949195AB048009456B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0176948195AB048009456B9 /* MapKit.framework */; };
+		F05E41141960F3DB0056D551 /* UIEAccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05E41121960F3DB0056D551 /* UIEAccelerometerViewController.m */; };
+		F05E41151960F3DB0056D551 /* UIEAccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05E41131960F3DB0056D551 /* UIEAccelerometerViewController.xib */; };
+		F05E411919610B850056D551 /* UIEAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05E411719610B850056D551 /* UIEAudioViewController.m */; };
+		F05E411A19610B850056D551 /* UIEAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05E411819610B850056D551 /* UIEAudioViewController.xib */; };
+		F05E411F19610E1A0056D551 /* epicsaxguy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F05E411E19610E1A0056D551 /* epicsaxguy.mp4 */; };
+		F05E41231961122B0056D551 /* Black-coffee-shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05E41221961122B0056D551 /* Black-coffee-shadow.ttf */; };
+		F05E4127196113050056D551 /* UIECustomFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05E4125196113050056D551 /* UIECustomFontViewController.m */; };
+		F05E4128196113050056D551 /* UIECustomFontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05E4126196113050056D551 /* UIECustomFontViewController.xib */; };
+		F0702F07196131BD00679BEC /* UIEAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0702F05196131BD00679BEC /* UIEAnimationViewController.m */; };
+		F0702F08196131BD00679BEC /* UIEAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0702F06196131BD00679BEC /* UIEAnimationViewController.xib */; };
+		F0702F2419613B1B00679BEC /* luf1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F1B19613B1B00679BEC /* luf1.png */; };
+		F0702F2519613B1B00679BEC /* luf2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F1C19613B1B00679BEC /* luf2.png */; };
+		F0702F2619613B1B00679BEC /* luf3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F1D19613B1B00679BEC /* luf3.png */; };
+		F0702F2719613B1B00679BEC /* luf4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F1E19613B1B00679BEC /* luf4.png */; };
+		F0702F2819613B1B00679BEC /* luf5.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F1F19613B1B00679BEC /* luf5.png */; };
+		F0702F2919613B1B00679BEC /* luf6.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F2019613B1B00679BEC /* luf6.png */; };
+		F0702F2A19613B1B00679BEC /* luf7.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F2119613B1B00679BEC /* luf7.png */; };
+		F0702F2B19613B1B00679BEC /* luf8.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F2219613B1B00679BEC /* luf8.png */; };
+		F0702F2C19613B1B00679BEC /* luf9.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F2319613B1B00679BEC /* luf9.png */; };
+		F0702F321961400400679BEC /* football.png in Resources */ = {isa = PBXBuildFile; fileRef = F0702F311961400400679BEC /* football.png */; };
 		F0D64CCF1957F9CD0033222F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CCE1957F9CD0033222F /* Foundation.framework */; };
 		F0D64CD11957F9CD0033222F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD01957F9CD0033222F /* CoreGraphics.framework */; };
 		F0D64CD31957F9CD0033222F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D64CD21957F9CD0033222F /* UIKit.framework */; };
@@ -87,6 +107,30 @@
 		F0176944195AB033009456B9 /* UIEMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEMapViewController.m; sourceTree = "<group>"; };
 		F0176945195AB033009456B9 /* UIEMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEMapViewController.xib; sourceTree = "<group>"; };
 		F0176948195AB048009456B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F05E41111960F3DB0056D551 /* UIEAccelerometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEAccelerometerViewController.h; sourceTree = "<group>"; };
+		F05E41121960F3DB0056D551 /* UIEAccelerometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEAccelerometerViewController.m; sourceTree = "<group>"; };
+		F05E41131960F3DB0056D551 /* UIEAccelerometerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEAccelerometerViewController.xib; sourceTree = "<group>"; };
+		F05E411619610B850056D551 /* UIEAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEAudioViewController.h; sourceTree = "<group>"; };
+		F05E411719610B850056D551 /* UIEAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEAudioViewController.m; sourceTree = "<group>"; };
+		F05E411819610B850056D551 /* UIEAudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEAudioViewController.xib; sourceTree = "<group>"; };
+		F05E411E19610E1A0056D551 /* epicsaxguy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = epicsaxguy.mp4; sourceTree = "<group>"; };
+		F05E41221961122B0056D551 /* Black-coffee-shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Black-coffee-shadow.ttf"; sourceTree = "<group>"; };
+		F05E4124196113050056D551 /* UIECustomFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIECustomFontViewController.h; sourceTree = "<group>"; };
+		F05E4125196113050056D551 /* UIECustomFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIECustomFontViewController.m; sourceTree = "<group>"; };
+		F05E4126196113050056D551 /* UIECustomFontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIECustomFontViewController.xib; sourceTree = "<group>"; };
+		F0702F04196131BD00679BEC /* UIEAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEAnimationViewController.h; sourceTree = "<group>"; };
+		F0702F05196131BD00679BEC /* UIEAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEAnimationViewController.m; sourceTree = "<group>"; };
+		F0702F06196131BD00679BEC /* UIEAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIEAnimationViewController.xib; sourceTree = "<group>"; };
+		F0702F1B19613B1B00679BEC /* luf1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf1.png; sourceTree = "<group>"; };
+		F0702F1C19613B1B00679BEC /* luf2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf2.png; sourceTree = "<group>"; };
+		F0702F1D19613B1B00679BEC /* luf3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf3.png; sourceTree = "<group>"; };
+		F0702F1E19613B1B00679BEC /* luf4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf4.png; sourceTree = "<group>"; };
+		F0702F1F19613B1B00679BEC /* luf5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf5.png; sourceTree = "<group>"; };
+		F0702F2019613B1B00679BEC /* luf6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf6.png; sourceTree = "<group>"; };
+		F0702F2119613B1B00679BEC /* luf7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf7.png; sourceTree = "<group>"; };
+		F0702F2219613B1B00679BEC /* luf8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf8.png; sourceTree = "<group>"; };
+		F0702F2319613B1B00679BEC /* luf9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luf9.png; sourceTree = "<group>"; };
+		F0702F311961400400679BEC /* football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = football.png; sourceTree = "<group>"; };
 		F0D64CCB1957F9CD0033222F /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D64CCE1957F9CD0033222F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0D64CD01957F9CD0033222F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -201,14 +245,23 @@
 			children = (
 				F0D64CE01957F9CD0033222F /* Images.xcassets */,
 				F0D64CD51957F9CD0033222F /* Supporting Files */,
+				F05E41111960F3DB0056D551 /* UIEAccelerometerViewController.h */,
+				F05E41121960F3DB0056D551 /* UIEAccelerometerViewController.m */,
+				F05E41131960F3DB0056D551 /* UIEAccelerometerViewController.xib */,
 				F0F85C8019596C8300890AE5 /* UIEActionSheetViewController.h */,
 				F0F85C8119596C8300890AE5 /* UIEActionSheetViewController.m */,
 				F0F85C8219596C8300890AE5 /* UIEActionSheetViewController.xib */,
 				F0F85C79195907BD00890AE5 /* UIEAlertViewController.h */,
 				F0F85C7A195907BD00890AE5 /* UIEAlertViewController.m */,
 				F0F85C7B195907BD00890AE5 /* UIEAlertViewController.xib */,
+				F0702F04196131BD00679BEC /* UIEAnimationViewController.h */,
+				F0702F05196131BD00679BEC /* UIEAnimationViewController.m */,
+				F0702F06196131BD00679BEC /* UIEAnimationViewController.xib */,
 				F0D64CDD1957F9CD0033222F /* UIEAppDelegate.h */,
 				F0D64CDE1957F9CD0033222F /* UIEAppDelegate.m */,
+				F05E411619610B850056D551 /* UIEAudioViewController.h */,
+				F05E411719610B850056D551 /* UIEAudioViewController.m */,
+				F05E411819610B850056D551 /* UIEAudioViewController.xib */,
 				F0176939195A9FCD009456B9 /* UIEBlocksViewController.h */,
 				F017693A195A9FCD009456B9 /* UIEBlocksViewController.m */,
 				F017693B195A9FCD009456B9 /* UIEBlocksViewController.xib */,
@@ -221,6 +274,9 @@
 				F017693E195AA401009456B9 /* UIECoreLocationViewController.h */,
 				F017693F195AA401009456B9 /* UIECoreLocationViewController.m */,
 				F0176940195AA401009456B9 /* UIECoreLocationViewController.xib */,
+				F05E4124196113050056D551 /* UIECustomFontViewController.h */,
+				F05E4125196113050056D551 /* UIECustomFontViewController.m */,
+				F05E4126196113050056D551 /* UIECustomFontViewController.xib */,
 				F015AF1B195A76E2004CDFCB /* UIEGameScreenViewController.h */,
 				F015AF1C195A76E2004CDFCB /* UIEGameScreenViewController.m */,
 				F015AF1D195A76E2004CDFCB /* UIEGameScreenViewController.xib */,
@@ -262,6 +318,18 @@
 		F0D64CD51957F9CD0033222F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0702F311961400400679BEC /* football.png */,
+				F0702F1B19613B1B00679BEC /* luf1.png */,
+				F0702F1C19613B1B00679BEC /* luf2.png */,
+				F0702F1D19613B1B00679BEC /* luf3.png */,
+				F0702F1E19613B1B00679BEC /* luf4.png */,
+				F0702F1F19613B1B00679BEC /* luf5.png */,
+				F0702F2019613B1B00679BEC /* luf6.png */,
+				F0702F2119613B1B00679BEC /* luf7.png */,
+				F0702F2219613B1B00679BEC /* luf8.png */,
+				F0702F2319613B1B00679BEC /* luf9.png */,
+				F05E41221961122B0056D551 /* Black-coffee-shadow.ttf */,
+				F05E411E19610E1A0056D551 /* epicsaxguy.mp4 */,
 				F0F85C7E1959468F00890AE5 /* veldog.jpg */,
 				F0D64CD61957F9CD0033222F /* UIElements-Info.plist */,
 				F0D64CD71957F9CD0033222F /* InfoPlist.strings */,
@@ -373,22 +441,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0D64D1119580CE20033222F /* UIETextViewController.xib in Resources */,
+				F0702F2619613B1B00679BEC /* luf3.png in Resources */,
+				F0702F2419613B1B00679BEC /* luf1.png in Resources */,
+				F0702F2519613B1B00679BEC /* luf2.png in Resources */,
 				F017693D195A9FCD009456B9 /* UIEBlocksViewController.xib in Resources */,
 				F0D64D091958022E0033222F /* UIEControlViewController.xib in Resources */,
 				F0F85C6E1958FE2800890AE5 /* UIESegmentViewController.xib in Resources */,
+				F05E411F19610E1A0056D551 /* epicsaxguy.mp4 in Resources */,
+				F0702F2B19613B1B00679BEC /* luf8.png in Resources */,
 				F0176942195AA401009456B9 /* UIECoreLocationViewController.xib in Resources */,
+				F0702F2719613B1B00679BEC /* luf4.png in Resources */,
+				F05E411A19610B850056D551 /* UIEAudioViewController.xib in Resources */,
+				F0702F2819613B1B00679BEC /* luf5.png in Resources */,
+				F05E41231961122B0056D551 /* Black-coffee-shadow.ttf in Resources */,
 				F0F85C7F1959468F00890AE5 /* veldog.jpg in Resources */,
 				F0176947195AB033009456B9 /* UIEMapViewController.xib in Resources */,
+				F0702F2919613B1B00679BEC /* luf6.png in Resources */,
 				F0F85C7D195907BD00890AE5 /* UIEAlertViewController.xib in Resources */,
 				F0D64D1619580D460033222F /* UIEPickerViewController.xib in Resources */,
+				F05E4128196113050056D551 /* UIECustomFontViewController.xib in Resources */,
 				F015AF24195A7725004CDFCB /* UIEPauseScreenViewController.xib in Resources */,
 				F0D64CD91957F9CD0033222F /* InfoPlist.strings in Resources */,
 				F0F85C8419596C8300890AE5 /* UIEActionSheetViewController.xib in Resources */,
+				F05E41151960F3DB0056D551 /* UIEAccelerometerViewController.xib in Resources */,
 				F0176938195A9B18009456B9 /* UIEWebViewController.xib in Resources */,
+				F0702F321961400400679BEC /* football.png in Resources */,
 				F015AF1F195A76E2004CDFCB /* UIEGameScreenViewController.xib in Resources */,
+				F0702F2A19613B1B00679BEC /* luf7.png in Resources */,
 				F0D64CE11957F9CD0033222F /* Images.xcassets in Resources */,
 				F0F85C731959053C00890AE5 /* UIEToolbarViewController.xib in Resources */,
 				F0D64D1B19580D900033222F /* UIEImagesViewController.xib in Resources */,
+				F0702F08196131BD00679BEC /* UIEAnimationViewController.xib in Resources */,
+				F0702F2C19613B1B00679BEC /* luf9.png in Resources */,
 				F0F85C781959072500890AE5 /* UIETabBarViewController.xib in Resources */,
 				F0D64D04195801790033222F /* UIEButtonViewController.xib in Resources */,
 			);
@@ -412,11 +496,15 @@
 				F0176941195AA401009456B9 /* UIECoreLocationViewController.m in Sources */,
 				F0D64D1A19580D900033222F /* UIEImagesViewController.m in Sources */,
 				F0D64D1019580CE20033222F /* UIETextViewController.m in Sources */,
+				F05E41141960F3DB0056D551 /* UIEAccelerometerViewController.m in Sources */,
 				F0F85C8319596C8300890AE5 /* UIEActionSheetViewController.m in Sources */,
 				F0F85C721959053C00890AE5 /* UIEToolbarViewController.m in Sources */,
 				F017693C195A9FCD009456B9 /* UIEBlocksViewController.m in Sources */,
 				F0D64D081958022E0033222F /* UIEControlViewController.m in Sources */,
+				F05E4127196113050056D551 /* UIECustomFontViewController.m in Sources */,
+				F0702F07196131BD00679BEC /* UIEAnimationViewController.m in Sources */,
 				F0D64CDF1957F9CD0033222F /* UIEAppDelegate.m in Sources */,
+				F05E411919610B850056D551 /* UIEAudioViewController.m in Sources */,
 				F0D64D0C1958093A0033222F /* UIEViewStore.m in Sources */,
 				F0176946195AB033009456B9 /* UIEMapViewController.m in Sources */,
 				F0F85C771959072500890AE5 /* UIETabBarViewController.m in Sources */,

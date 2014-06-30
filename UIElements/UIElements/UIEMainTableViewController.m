@@ -22,6 +22,11 @@
 #import "UIEBlocksViewController.h"
 #import "UIECoreLocationViewController.h"
 #import "UIEMapViewController.h"
+#import "UIEAccelerometerViewController.h"
+#import "UIEAudioViewController.h"
+#import "UIECustomFontViewController.h"
+#import "UIEAnimationViewController.h"
+
 
 @interface UIEMainTableViewController()
 @property (retain, nonatomic)NSMutableArray *array;
@@ -52,6 +57,11 @@
         UIEBlocksViewController *blcksVC = [UIEBlocksViewController alloc];
         UIECoreLocationViewController *crLctnVC = [UIECoreLocationViewController alloc];
         UIEMapViewController *mpVC = [UIEMapViewController alloc];
+        UIEAccelerometerViewController *accVC = [UIEAccelerometerViewController alloc];
+        UIEAudioViewController *audVC = [UIEAudioViewController alloc];
+        UIECustomFontViewController *cstmFntVC = [UIECustomFontViewController alloc];
+        UIEAnimationViewController *anmtnVC = [UIEAnimationViewController alloc];
+
         
         // Push them inside the array as a dictionary with "title" as key and their class name as value
         [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
@@ -69,6 +79,11 @@
         [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
         [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([crLctnVC class]), @"title",nil]];
         [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([accVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([audVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([cstmFntVC class]), @"title",nil]];
+        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([anmtnVC class]), @"title",nil]];
+        
     }
     return self;
 }
@@ -85,7 +100,7 @@ numberOfRowsInSection:(NSInteger)section
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
-cellForRowAtIndexPath:(NSIndexPath *)indexPath
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     NSDictionary *dictionary = [self.array objectAtIndex:indexPath.row];
