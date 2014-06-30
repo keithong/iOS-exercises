@@ -55,7 +55,7 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     
-    if(self){
+    if(self) {
         self.restorationIdentifier = NSStringFromClass([self class]);
         self.restorationClass = [self class];
         
