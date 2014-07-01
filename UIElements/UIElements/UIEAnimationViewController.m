@@ -15,6 +15,7 @@
 @implementation UIEAnimationViewController
 const int IMAGE_WIDTH = 51;
 const int IMAGE_HEIGHT = 68;
+const float animationDuration = .5;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,7 +36,7 @@ const int IMAGE_HEIGHT = 68;
     
     UIImageView *animationImageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame), IMAGE_WIDTH, IMAGE_HEIGHT)];
     animationImageView.animationImages = images;
-    animationImageView.animationDuration = .5;
+    animationImageView.animationDuration = animationDuration;
     
     [self.view addSubview:animationImageView];
     [animationImageView startAnimating];

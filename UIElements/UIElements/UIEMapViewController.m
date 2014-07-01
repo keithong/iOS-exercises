@@ -32,14 +32,14 @@ const float LONG_DELTA = .18;
         [self.locationManager startUpdatingLocation];
         return;
     }
-    UIAlertView *errorLocation = [[UIAlertView alloc]
-                                  initWithTitle:@"Error!"
-                                  message:@"Location Services are not enabled."
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
+    UIAlertView *locationErrorAlertView = [[UIAlertView alloc]
+                                           initWithTitle:@"Error!"
+                                           message:@"Location Services are not enabled."
+                                           delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
     
-    [errorLocation show];
+    [locationErrorAlertView show];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -61,7 +61,7 @@ const float LONG_DELTA = .18;
     newRegion.span.longitudeDelta = LONG_DELTA;
     
     [self.myMapView setRegion:newRegion animated:YES];
-
+    
 }
 
 @end

@@ -7,14 +7,23 @@
 //
 
 #import "UIESegmentViewController.h"
+@interface UIESegmentViewController()
+typedef enum{
+    firstSegment = 0,
+    secondSegment = 1
+} ChosenSegment;
+@end
 
 @implementation UIESegmentViewController
 - (IBAction)segmentChange:(UISegmentedControl *)sender {
-    switch (self.chooseSegment.selectedSegmentIndex) {
-        case 0:
+
+    ChosenSegment checkSegment = self.chooseSegment.selectedSegmentIndex;
+    
+    switch (checkSegment) {
+        case firstSegment:
             self.outputLabel.text = @"You are in the first segment.";
             break;
-        case 1:
+        case secondSegment:
             self.outputLabel.text = @"You are in the second segment.";
             break;
             

@@ -113,9 +113,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     // Do not use UIViewController class because it throws an exception
     // Get the class of the selected cell and use that to load your next view controller
-    Class classPicker = NSClassFromString([NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]);
+    Class ClassPicker = NSClassFromString([NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]]);
     
-    id viewController  = [[classPicker alloc]
+    id viewController  = [[ClassPicker alloc]
                           initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]] bundle:[NSBundle mainBundle]];
        
     [self.navigationController pushViewController:viewController animated:YES];

@@ -9,8 +9,8 @@
 #import "MVCMainViewController.h"
 #import "MVCLevelViewController.h"
 @interface MVCMainViewController()
-@property (retain, nonatomic) NSMutableArray *mainArray;
-@property (retain, nonatomic) NSMutableArray *thumbs;
+@property (retain, nonatomic) NSMutableArray *categoriesArray;
+@property (retain, nonatomic) NSMutableArray *imageThumbnails;
 @end
 
 @implementation MVCMainViewController
@@ -20,16 +20,16 @@
     self = [super initWithStyle:UITableViewStylePlain];
     self.title = @"Main View Controller";
     if(self){
-        self.mainArray = [[NSMutableArray alloc]init];
-        self.thumbs = [[NSMutableArray alloc]init];
+        self.categoriesArray = [[NSMutableArray alloc]init];
+        self.imageThumbnails = [[NSMutableArray alloc]init];
 
-        [self.mainArray addObject:[NSDictionary dictionaryWithObject:@"Letter" forKey:@"Title"]];
-        [self.mainArray addObject:[NSDictionary dictionaryWithObject:@"Color" forKey:@"Title"]];
-        [self.mainArray addObject:[NSDictionary dictionaryWithObject:@"Food" forKey:@"Title"]];
+        [self.categoriesArray addObject:[NSDictionary dictionaryWithObject:@"Letter" forKey:@"Title"]];
+        [self.categoriesArray addObject:[NSDictionary dictionaryWithObject:@"Color" forKey:@"Title"]];
+        [self.categoriesArray addObject:[NSDictionary dictionaryWithObject:@"Food" forKey:@"Title"]];
         
-        [self.thumbs addObject:@"alphabet.jpg"];
-        [self.thumbs addObject:@"color.jpg"];
-        [self.thumbs addObject:@"food.png"];
+        [self.imageThumbnails addObject:@"alphabet.jpg"];
+        [self.imageThumbnails addObject:@"color.jpg"];
+        [self.imageThumbnails addObject:@"food.png"];
     }
     return self;
 }
@@ -42,7 +42,7 @@
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section
 {
-    return [self.mainArray count];
+    return [self.categoriesArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -51,19 +51,18 @@ numberOfRowsInSection:(NSInteger)section
                              dequeueReusableCellWithIdentifier:@"UITableViewCell"
                              forIndexPath:indexPath];
     
-    NSDictionary *cellIdentifier = [self.mainArray objectAtIndex:indexPath.row];
+    NSDictionary *cellIdentifier = [self.categoriesArray objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[cellIdentifier objectForKey:@"Title"]];
-    cell.imageView.image = [UIImage imageNamed:[self.thumbs objectAtIndex:indexPath.row]];
+    cell.imageView.image = [UIImage imageNamed:[self.imageThumbnails objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MVCLevelViewController *lvlVC
- = [[MVCLevelViewController alloc] init];
-    NSDictionary *titleIdentifier = [self.mainArray objectAtIndex:indexPath.row];
+    MVCLevelViewController *lvlVC = [[MVCLevelViewController alloc] init];
+    NSDictionary *titleIdentifier = [self.categoriesArray objectAtIndex:indexPath.row];
     
     // Set the category of the items in the level view
     // depending on the selected title in the main view

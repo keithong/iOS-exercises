@@ -83,12 +83,16 @@
 
 -(void)viewDidLoad
 {
+    
     [super viewDidLoad];
     self.title = self.category;
     
-    UINib *nib = [UINib nibWithNibName:@"MVCLevelCell" bundle:nil];
+    NSString *levelCellIdentifier = [NSString stringWithFormat:@"MVCLevelCell"];
+    NSString *cellReuseIdentifier = [NSString stringWithFormat:@"UITableViewCell"];
     
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"MVCLevelCell"];
+    UINib *nib = [UINib nibWithNibName:levelCellIdentifier bundle:nil];
+    
+    [self.tableView registerNib:nib forCellReuseIdentifier:levelCellIdentifier];
     
     self.filePath = [[NSBundle mainBundle] pathForResource:@"Exercise-Tool" ofType:@"plist"];
     
@@ -99,12 +103,10 @@
         // Use this to view every item on a given category
         self.filteredArray = [self.plistArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(itemCategory == %@)", self.category]];
         
-        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellReuseIdentifier];
         return;
     }
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    NSLog(@"Failed to load plist");
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellReuseIdentifier];
 }
 
 @end

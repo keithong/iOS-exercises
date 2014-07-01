@@ -12,11 +12,9 @@
 - (IBAction)pauseButtonMethod:(id)sender {
     if([self.delegate respondsToSelector:@selector(pauseGameDelegateMethod)])
     {
-        NSLog(@"Call pauseGameDelegateMethod from MainViewController");
         [self.delegate pauseGameDelegateMethod];
         return;
     }
-        NSLog(@"Does not conform to the Delegate Protocol");
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

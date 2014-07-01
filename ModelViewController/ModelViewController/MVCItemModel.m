@@ -11,7 +11,6 @@
 
 @end
 @implementation MVCItemModel
-@synthesize itemTitle,itemDescription, itemCategory;
 
 -(id)initWithDictionary:(NSDictionary *)dict
 {
