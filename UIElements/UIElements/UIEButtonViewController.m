@@ -29,7 +29,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         self.labelOutput.text = @"";
     }
     return self;
@@ -37,9 +36,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
+    [super viewDidLoad];    
     // Set the navbar title to the selected item's class
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }

@@ -40,7 +40,6 @@
 {
     // We want to access the model in the level view
     // to add the description with the title in the cell
-    
     self = [super init];
     self.itemTitleForLabel = itemModel.itemTitle;
     self.itemDescriptionForLabel = itemModel.itemDescription;
@@ -65,10 +64,10 @@
     
     // Use level view controller's initWithItemModel
     // to get data from the model
-    MVCLevelViewController *lvc = [[MVCLevelViewController alloc]initWithItemModel:item];
+    MVCLevelViewController *lvlVC = [[MVCLevelViewController alloc]initWithItemModel:item];
     
-    cell.levelTitleLabel.text = lvc.itemTitleForLabel;
-    cell.levelDescriptionLabel.text = lvc.itemDescriptionForLabel;
+    cell.levelTitleLabel.text = lvlVC.itemTitleForLabel;
+    cell.levelDescriptionLabel.text = lvlVC.itemDescriptionForLabel;
     
     return cell;
 }
@@ -76,13 +75,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *detailIdentifier = [self.filteredArray objectAtIndex:indexPath.row];
-    
-    // Log to test and debug
-    // NSLog(@"detailIdentifier %@", detailIdentifier);
-    
     MVCItemModel *item = [[MVCItemModel alloc]initWithDictionary:detailIdentifier];
-    MVCDetailViewController *dvc = [[MVCDetailViewController alloc]initWithItemModel:item];
-    [self.navigationController pushViewController:dvc animated:YES];
+    MVCDetailViewController *detailVC = [[MVCDetailViewController alloc]initWithItemModel:item];
+    [self.navigationController pushViewController:detailVC animated:YES];
     
 }
 
@@ -99,16 +94,10 @@
     
     if(self.filePath)
     {
-        // Log to test and debug
-        // NSLog(@"plist Loaded");
-        
         self.plistArray = [NSArray arrayWithContentsOfFile:self.filePath];
         
         // Use this to view every item on a given category
         self.filteredArray = [self.plistArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(itemCategory == %@)", self.category]];
-        
-        // NSLog (@"Selected Category: %@",self.category);
-        // NSLog(@"filteredArray: %@", filteredArray);
         
         [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
         return;

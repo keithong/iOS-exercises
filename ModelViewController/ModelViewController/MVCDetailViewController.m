@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     self.title = self.itemTitleForLabel;
-    // Do any additional setup after loading the view from its nib.
+
     self.titleLabel.text = self.itemTitleForLabel;
     self.descriptionLabel.text = self.itemDescriptionForLabel;
     self.categoryLabel.text = self.itemCategoryForLabel;

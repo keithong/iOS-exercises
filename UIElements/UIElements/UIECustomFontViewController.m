@@ -16,7 +16,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     self.customLabel.font = [UIFont fontWithName:@"Black Coffee Shadow" size:20.0];
 }
 @end

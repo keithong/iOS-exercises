@@ -61,13 +61,14 @@ numberOfRowsInSection:(NSInteger)section
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MVCLevelViewController *lvc = [[MVCLevelViewController alloc] init];
+    MVCLevelViewController *lvlVC
+ = [[MVCLevelViewController alloc] init];
     NSDictionary *titleIdentifier = [self.mainArray objectAtIndex:indexPath.row];
     
     // Set the category of the items in the level view
     // depending on the selected title in the main view
-    lvc.category = [NSString stringWithFormat:@"%@", [titleIdentifier objectForKey:@"Title"]];
-    [self.navigationController pushViewController:lvc animated:YES];
+    lvlVC.category = [NSString stringWithFormat:@"%@", [titleIdentifier objectForKey:@"Title"]];
+    [self.navigationController pushViewController:lvlVC animated:YES];
 }
 
 -(void)viewDidLoad

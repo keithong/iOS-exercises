@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     NSBundle *mainBundle = [NSBundle mainBundle];
     
     NSString *filePath = [mainBundle pathForResource:@"epicsaxguy" ofType:@"mp4"];

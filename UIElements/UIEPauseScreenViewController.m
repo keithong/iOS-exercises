@@ -12,10 +12,10 @@
 - (IBAction)pauseButtonMethod:(id)sender {
     if([self.delegate respondsToSelector:@selector(pauseGameDelegateMethod)])
     {
-        NSLog(@"call pauseGameDelegateMethod from MainViewController");
+        NSLog(@"Call pauseGameDelegateMethod from MainViewController");
         [self.delegate pauseGameDelegateMethod];
+        return;
     }
-    else
         NSLog(@"Does not conform to the Delegate Protocol");
 }
 
@@ -23,7 +23,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
         [self.delegate pauseGameDelegateMethod];
     }
     return self;
@@ -32,8 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
     // Set the navbar title to the selected item's class
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }

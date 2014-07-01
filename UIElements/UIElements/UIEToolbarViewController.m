@@ -10,6 +10,7 @@
 
 @implementation UIEToolbarViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -23,7 +24,9 @@
 
 -(void)createToolBar
 {
-    UIToolbar *myToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 44, 320, 44)];
+    const int TOOLBAR_HEIGHT = self.navigationController.toolbar.frame.size.height;
+    const int TOOLBAR_WIDTH = self.navigationController.toolbar.frame.size.width;
+    UIToolbar *myToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - TOOLBAR_HEIGHT, TOOLBAR_WIDTH, TOOLBAR_HEIGHT)];
     
     // Use this to create spaces between your other buttons
     UIBarButtonItem *spaceFiller = [[UIBarButtonItem alloc]
@@ -59,10 +62,7 @@
                                nil];
     
     [self.view addSubview:myToolbar];
-    
     [myToolbar setItems:toolbarButtons];
-    // Why is this not working?
-    // [self setToolbarItems:toolbarButtons animated:NO];
 }
 
 -(IBAction)firstButtonTapped:(UIBarButtonItem *)sender

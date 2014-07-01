@@ -29,7 +29,8 @@
 
 
 @interface UIEMainTableViewController()
-@property (retain, nonatomic)NSMutableArray *array;
+@property (retain, nonatomic) NSMutableArray *array;
+@property (retain, nonatomic) NSMutableArray *objectArray;
 @end
 
 @implementation UIEMainTableViewController
@@ -61,28 +62,16 @@
         UIEAudioViewController *audVC = [UIEAudioViewController alloc];
         UIECustomFontViewController *cstmFntVC = [UIECustomFontViewController alloc];
         UIEAnimationViewController *anmtnVC = [UIEAnimationViewController alloc];
-
         
-        // Push them inside the array as a dictionary with "title" as key and their class name as value
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([btnVC class]), @"title", nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([ctrlVC class]), @"title", nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([txtVC class]), @"title", nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([pckrVC class]), @"title", nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([imgsVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([sgmntVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tlbrVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([tabVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([alrtVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([actnVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([gmScrnVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([wbVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([blcksVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([crLctnVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([mpVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([accVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([audVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([cstmFntVC class]), @"title",nil]];
-        [self.array addObject:[NSDictionary dictionaryWithObjectsAndKeys:NSStringFromClass([anmtnVC class]), @"title",nil]];
+        // Create a storage for each objects of the classes
+        self.objectArray = [NSMutableArray arrayWithObjects:btnVC,ctrlVC,txtVC,pckrVC,imgsVC,sgmntVC,tlbrVC,tabVC,alrtVC,actnVC,
+                                                            gmScrnVC,wbVC,blcksVC,crLctnVC,mpVC,accVC,audVC,cstmFntVC,anmtnVC, nil];
+        
+        // Push the objects inside the array as a dictionary with "title" as key and their class name as value
+        for (int i = 0; i < [self.objectArray count]; i++){
+            [self.array addObject:[NSDictionary
+                                   dictionaryWithObjectsAndKeys:NSStringFromClass([[self.objectArray objectAtIndex:i] class]), @"title", nil]];
+        }
         
     }
     return self;
@@ -128,10 +117,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     id viewController  = [[classPicker alloc]
                           initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]] bundle:[NSBundle mainBundle]];
-    
-    // Log to test and debug
-    // NSLog(@"Selected cell: %@", [dictionary objectForKey:@"title"]);
-    
+       
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

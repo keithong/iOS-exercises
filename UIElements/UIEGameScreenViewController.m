@@ -14,15 +14,12 @@
                                                initWithNibName:@"UIEPauseScreenViewController"
                                                bundle:[NSBundle mainBundle]];
     [pauseGame setDelegate:self];
-    
     [self.navigationController pushViewController:pauseGame animated:NO];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
     // Set the navbar title to the selected item's class
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }
@@ -38,9 +35,6 @@
                           otherButtonTitles:nil];
     
     [notify show];
-    
-    // Log to test and debug
-    // NSLog(@"Successfully called the delegate method!");
 }
 
 @end

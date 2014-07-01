@@ -15,7 +15,8 @@
 @end
 
 @implementation UIEMapViewController
-
+const float LAT_DELTA = .18;
+const float LONG_DELTA = .18;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,8 +57,8 @@
     newRegion.center.latitude = self.latitude;
     newRegion.center.longitude = self.longtitude;
     
-    newRegion.span.latitudeDelta = .18;
-    newRegion.span.longitudeDelta = .18;
+    newRegion.span.latitudeDelta = LAT_DELTA;
+    newRegion.span.longitudeDelta = LONG_DELTA;
     
     [self.myMapView setRegion:newRegion animated:YES];
 
