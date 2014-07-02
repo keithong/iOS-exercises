@@ -93,7 +93,7 @@
 -(UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
 {
     // Create a new navigation controller
-    UIViewController *vc = [[UIViewController alloc] init];
+    UIViewController *vc = [[UINavigationController alloc] init];
     
     // The last object in the path array is the restoration identifier
     // for this view controller
