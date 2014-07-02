@@ -31,6 +31,7 @@
 		F0CCC73219502A11006E9BC3 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC73119502A11006E9BC3 /* BNRItemsViewController.m */; };
 		F0CCC73819502CE4006E9BC3 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC73719502CE4006E9BC3 /* BNRItemStore.m */; };
 		F0CCC73A1950398A006E9BC3 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0CCC7391950398A006E9BC3 /* HeaderView.xib */; };
+		F0E3CB411963A38600FAC0B1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F0E3CB401963A38600FAC0B1 /* Settings.bundle */; };
 		F0F2C0ED1953CA7A00E53AC2 /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2C0EC1953CA7A00E53AC2 /* BNRImageViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		F0CCC73619502CE4006E9BC3 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		F0CCC73719502CE4006E9BC3 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 		F0CCC7391950398A006E9BC3 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		F0E3CB401963A38600FAC0B1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F0F2C0EB1953CA7A00E53AC2 /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
 		F0F2C0EC1953CA7A00E53AC2 /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				F05F0DC81957B0C500CF7866 /* BNRAssetTypeViewController.m */,
 				F08C6D1F195122EC00064EC5 /* BNRDetailViewController.h */,
 				F08C6D20195122EC00064EC5 /* BNRDetailViewController.m */,
+				F0E3CB401963A38600FAC0B1 /* Settings.bundle */,
 				F08C6D21195122EC00064EC5 /* BNRDetailViewController.xib */,
 				F082A1C019515DBB00BB4057 /* BNRImageStore.h */,
 				F082A1C119515DBB00BB4057 /* BNRImageStore.m */,
@@ -284,6 +287,7 @@
 				F0CCC73A1950398A006E9BC3 /* HeaderView.xib in Resources */,
 				F0CCC70C195029B0006E9BC3 /* InfoPlist.strings in Resources */,
 				F0CCC714195029B0006E9BC3 /* Images.xcassets in Resources */,
+				F0E3CB411963A38600FAC0B1 /* Settings.bundle in Resources */,
 				F06FD87E1952E494009BE119 /* BNRItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
