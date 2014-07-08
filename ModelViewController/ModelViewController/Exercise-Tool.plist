@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>itemTitle</key>
+		<string>Egg</string>
+		<key>itemDescription</key>
+		<string>The food egg</string>
+		<key>itemCategory</key>
+		<string>Food</string>
+	</dict>
+	<dict>
+		<key>itemTitle</key>
+		<string>Bacon</string>
+		<key>itemDescription</key>
+		<string>The food bacon</string>
+		<key>itemCategory</key>
+		<string>Food</string>
+	</dict>
+	<dict>
+		<key>itemTitle</key>
+		<string>Blue</string>
+		<key>itemDescription</key>
+		<string>The color blue</string>
+		<key>itemCategory</key>
+		<string>Color</string>
+	</dict>
+	<dict>
+		<key>itemTitle</key>
+		<string>Green</string>
+		<key>itemDescription</key>
+		<string>The color green</string>
+		<key>itemCategory</key>
+		<string>Color</string>
+	</dict>
+	<dict>
+		<key>itemTitle</key>
+		<string>B</string>
+		<key>itemDescription</key>
+		<string>The second letter</string>
+		<key>itemCategory</key>
+		<string>Letter</string>
+	</dict>
+	<dict>
+		<key>itemTitle</key>
+		<string>A</string>
+		<key>itemDescription</key>
+		<string>The first letter</string>
+		<key>itemCategory</key>
+		<string>Letter</string>
+	</dict>
+</array>
+</plist>
