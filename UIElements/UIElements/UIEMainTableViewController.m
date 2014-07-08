@@ -34,6 +34,7 @@
 @end
 
 @implementation UIEMainTableViewController
+
 -(instancetype)init
 {
     self = [super initWithStyle:UITableViewStylePlain];
@@ -65,7 +66,7 @@
         
         // Create a storage for each objects of the classes
         self.objectArray = [NSMutableArray arrayWithObjects:btnVC,ctrlVC,txtVC,pckrVC,imgsVC,sgmntVC,tlbrVC,tabVC,alrtVC,actnVC,
-                                                            gmScrnVC,wbVC,blcksVC,crLctnVC,mpVC,accVC,audVC,cstmFntVC,anmtnVC, nil];
+                            gmScrnVC,wbVC,blcksVC,crLctnVC,mpVC,accVC,audVC,cstmFntVC,anmtnVC, nil];
         
         // Push the objects inside the array as a dictionary with "title" as key and their class name as value
         for (int i = 0; i < [self.objectArray count]; i++){
@@ -82,14 +83,12 @@
     return [self init];
 }
 
--(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.array count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     NSDictionary *dictionary = [self.array objectAtIndex:indexPath.row];
@@ -106,8 +105,7 @@ numberOfRowsInSection:(NSInteger)section
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 
--(void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dictionary = [self.array objectAtIndex:indexPath.row];
     
@@ -117,7 +115,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     id viewController  = [[ClassPicker alloc]
                           initWithNibName:[NSString stringWithFormat:@"%@", [dictionary objectForKey:@"title"]] bundle:[NSBundle mainBundle]];
-       
+    
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

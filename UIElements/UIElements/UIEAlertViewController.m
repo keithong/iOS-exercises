@@ -42,7 +42,6 @@
     self.title = [NSString stringWithFormat:@"%@", self.class];
 }
 
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
