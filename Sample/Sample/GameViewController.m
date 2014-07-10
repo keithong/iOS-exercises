@@ -16,6 +16,7 @@
 @property (retain, nonatomic) UICollisionBehavior *playerCollider;
 @property (retain, nonatomic) UIDynamicItemBehavior *playerProperty;
 @property (retain, nonatomic) UIDynamicItemBehavior *blockProperty;
+@property (retain, nonatomic) UITapGestureRecognizer *tapRecognizer;
 @property (retain, nonatomic) NSTimer *blockTimer;
 
 @property (nonatomic) int screenHeight;
@@ -46,11 +47,13 @@
     
     self.blockTimer = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(createAnotherBlock) userInfo:nil repeats:YES];
     
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(destroyBlock)];
+    self.tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(punchBlock)];
+    [self.view addGestureRecognizer:self.tapRecognizer];
     
-//    [self.view addGestureRecognizer:tapRecognizer];
+    
+    
     [self blockTimer];
-    
+        [self isColliding];
     [self playerBlockCollider];
     
    }
@@ -67,20 +70,20 @@
     self.screenWidth = [UIScreen mainScreen].bounds.size.width;
     self.blockHeight = self.screenHeight/2;
     self.blockWidth = 50;
-    self.playerHeight = 90;
-    self.playerWidth = 25;    
+    self.playerHeight = 50;
+    self.playerWidth = 100;
 }
 
 -(UIView *)createPlayer
 {
     self.player = [[UIView alloc]init];
     
-    [self.player setFrame:CGRectMake(20, self.screenHeight - self.playerHeight, self.playerWidth, self.playerHeight)];
+    [self.player setFrame:CGRectMake(0, (self.screenHeight/2) + self.playerHeight, self.playerWidth, self.playerHeight)];
     self.player.backgroundColor = [UIColor greenColor];
     
     self.playerProperty = [[UIDynamicItemBehavior alloc]initWithItems:@[self.player]];
     self.playerProperty.allowsRotation = NO;
-    self.playerProperty.density = 10000;
+    self.playerProperty.density = 5;
     
     
     [self.view addSubview:self.player];
@@ -98,7 +101,7 @@
     
     self.blockProperty = [[UIDynamicItemBehavior alloc]initWithItems:@[self.block]];
     self.blockProperty.allowsRotation = NO;
-    
+    self.blockProperty.density = 10;
     
     
     [self.view addSubview:self.block];
@@ -109,19 +112,27 @@
 
 -(void)pushBlock:(UIView *)block
 {
-    
     UIPushBehavior *blockPusher = [[UIPushBehavior alloc] initWithItems:@[block] mode:UIPushBehaviorModeInstantaneous];
-    blockPusher.pushDirection = CGVectorMake(-.5, 0);
+    blockPusher.pushDirection = CGVectorMake(-10, 0);
     blockPusher.active = YES;
     [self.animator addBehavior:blockPusher];
     
 }
 
+-(void)pushPlayer:(UIView *)player
+{
+    UIPushBehavior *playerPusher = [[UIPushBehavior alloc] initWithItems:@[player] mode:UIPushBehaviorModeInstantaneous];
+    playerPusher.pushDirection = CGVectorMake(5, 0);
+    playerPusher.active = YES;
+    [self.animator addBehavior:playerPusher];
+}
+
 -(void)playerBlockCollider
 {
+    self.collider = [[UICollisionBehavior alloc] init];
     self.collider.collisionDelegate = self;
     self.collider.collisionMode = UICollisionBehaviorModeEverything;
-    self.collider = [[UICollisionBehavior alloc] init];
+    self.collider.translatesReferenceBoundsIntoBoundary = YES;
 
 
     [self.collider addItem:[self createPlayer]];
@@ -132,17 +143,36 @@
 
 -(void)createAnotherBlock
 {
-[self.collider addItem:[self createBlock]];
-[self pushBlock:self.collider.items[self.collider.items.count-1]];
-[self.animator addBehavior:self.collider];
+    [self.collider addItem:[self createBlock]];
+    [self pushBlock:self.collider.items[self.collider.items.count-1]];
+    [self.animator addBehavior:self.collider];
 }
 
--(void)destroyBlock
+-(void)punchBlock
 {
-    [self.block removeFromSuperview];
-    [self.collider removeItem:self.collider.items[self.collider.items.count-1]];
+  
+//    NSLog(@"%@", self.collider.items[0]);
+//    if (self.tapRecognizer.state == UIGestureRecognizerStateEnded) {
+//        [self returnPlayer:self.collider.items[0]];
+//        [self.animator addBehavior:self.collider];
+//        NSLog(@"tap released");
+//        return;
+//    }
+    [self pushPlayer:self.collider.items[0]];
+    [self.animator addBehavior:self.collider];
+
+    
 }
 
+-(BOOL)isColliding
+{
+    if (CGRectIntersectsRect(self.player.frame, self.block.frame)) {
+         NSLog(@"collides");
+        return YES;
+    }
+    NSLog(@"not colliding");
+    return NO;
+}
 
 
 /*
