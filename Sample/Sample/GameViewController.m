@@ -12,8 +12,6 @@
 @property (retain, nonatomic) UIView *player;
 @property (retain, nonatomic) UIDynamicAnimator *animator;
 @property (retain, nonatomic) UICollisionBehavior *collider;
-@property (retain, nonatomic) UICollisionBehavior *blockCollider;
-@property (retain, nonatomic) UICollisionBehavior *playerCollider;
 @property (retain, nonatomic) UIDynamicItemBehavior *playerProperty;
 @property (retain, nonatomic) UIDynamicItemBehavior *blockProperty;
 @property (retain, nonatomic) UITapGestureRecognizer *tapRecognizer;
@@ -53,7 +51,7 @@
     
     
     [self blockTimer];
-        [self isColliding];
+    [self isColliding];
     [self playerBlockCollider];
     
    }
@@ -102,7 +100,6 @@
     self.blockProperty = [[UIDynamicItemBehavior alloc]initWithItems:@[self.block]];
     self.blockProperty.allowsRotation = NO;
     self.blockProperty.density = 10;
-    
     
     [self.view addSubview:self.block];
     [self.animator addBehavior:self.blockProperty];

@@ -8,10 +8,15 @@
 
 #import "GameViewController.h"
 
-@interface GameViewController ()
-
+@interface GameViewController () <UICollisionBehaviorDelegate>
+@property (retain, nonatomic) NSTimer *foodTimer;
 @property (retain, nonatomic) UIView *basket;
 @property (retain, nonatomic) UIView *food;
+@property (retain, nonatomic) UIDynamicItemBehavior *basketProperty;
+@property (retain, nonatomic) UIDynamicItemBehavior *foodProperty;
+@property (retain, nonatomic) UICollisionBehavior *collider;
+@property (retain, nonatomic) UIGravityBehavior *gravity;
+@property (retain, nonatomic) UIDynamicAnimator *animator;
 
 @property (nonatomic) int screenWidth;
 @property (nonatomic) int screenHeight;
@@ -19,6 +24,7 @@
 @property (nonatomic) int basketHeight;
 @property (nonatomic) int foodWidth;
 @property (nonatomic) int foodHeight;
+@property (nonatomic) int foodRandomPosition;
 @end
 
 @implementation GameViewController
@@ -36,9 +42,14 @@
 {
     [super viewDidLoad];
     [self gameElements];
-    [self createBasket];
-    [self createFood];
-    // Do any additional setup after loading the view.
+    
+    //    [self createBasket];
+    //    [self createAnotherFood];
+    //    [self foodBasketCollider];
+    //    [self rainFood];
+    self.foodTimer = [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(createAnotherFood) userInfo:nil repeats:YES];
+    
+    [self foodBasketCollider];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,11 +66,12 @@
     self.basketHeight= 20;
     self.foodWidth = 15;
     self.foodHeight = 15;
-    
+    self.animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+    self.gravity = [[UIGravityBehavior alloc]init];
     
 }
 
--(void)createBasket
+-(UIView *)createBasket
 {
     self.basket = [[UIView alloc]initWithFrame:
                    CGRectMake(CGRectGetMidX([UIScreen mainScreen].bounds) - self.basketWidth,
@@ -68,21 +80,56 @@
                               self.basketHeight)];
     
     self.basket.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.basket];
     
+    self.basketProperty = [[UIDynamicItemBehavior alloc]initWithItems:@[self.basket]];
+    self.basketProperty.allowsRotation = NO;
+    self.basketProperty.density = 10000;
+    
+    
+    [self.view addSubview:self.basket];
+    [self.animator addBehavior:self.basketProperty];
+    
+    return self.basket;
 }
 
--(void)createFood
+-(UIView *)createFood
 {
-    self.food = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.foodWidth, self.foodHeight)];
+    self.foodRandomPosition = arc4random() % self.screenWidth;
+    self.food = [[UIView alloc] initWithFrame:CGRectMake(self.foodRandomPosition, 0, self.foodWidth, self.foodHeight)];
     self.food.backgroundColor = [UIColor brownColor];
+    
+    self.foodProperty = [[UIDynamicItemBehavior alloc]initWithItems:@[self.food]];
+    self.foodProperty.allowsRotation = YES;
+    
+    
     [self.view addSubview:self.food];
+    [self.animator addBehavior:self.foodProperty];
+    return self.food;
 }
 
--(void)rainFood
+-(void)rainFood:(UIView *)food
 {
-    // make food fall from the sky
+    [self.gravity addItem:food];
+    [self.animator addBehavior:self.gravity];
+//    NSLog(@"%@", self.gravity.items.lastObject);
 }
+
+-(void)foodBasketCollider
+{
+    self.collider = [[UICollisionBehavior alloc] init];
+    self.collider.collisionDelegate = self;
+    self.collider.collisionMode = UICollisionBehaviorModeEverything;
+    [self.collider addItem:[self createBasket]];
+    [self.animator addBehavior:self.collider];
+}
+
+-(void)createAnotherFood
+{
+    [self rainFood:[self createFood]];
+    [self.collider addItem:self.gravity.items.lastObject];
+}
+
+
 
 /*
  #pragma mark - Navigation
